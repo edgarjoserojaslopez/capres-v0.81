@@ -1,0 +1,81 @@
+	/*
+  	Flaticon icon font: Flaticon
+  	Creation date: 21/05/2018 12:21
+  	*/
+
+@font-face {
+  font-family: "Flaticon";
+  src: url("./Flaticon.eot");
+  src: url("./Flaticon.eot?#iefix") format("embedded-opentype"),
+       url("./Flaticon.woff") format("woff"),
+       url("./Flaticon.ttf") format("truetype"),
+       url("./Flaticon.svg#Flaticon") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+  @font-face {
+    font-family: "Flaticon";
+    src: url("./Flaticon.svg#Flaticon") format("svg");
+  }
+}
+
+[class^="flaticon-"]:before, [class*=" flaticon-"]:before,
+[class^="flaticon-"]:after, [class*=" flaticon-"]:after {   
+  font-family: Flaticon;
+        font-size: 20px;
+font-style: normal;
+margin-left: 20px;
+}
+
+.flaticon-001-oil:before { content: "\f100"; }
+.flaticon-002-bar-chart-1:before { content: "\f101"; }
+.flaticon-003-abacus:before { content: "\f102"; }
+.flaticon-004-book:before { content: "\f103"; }
+.flaticon-005-archives:before { content: "\f104"; }
+.flaticon-006-pie-chart:before { content: "\f105"; }
+.flaticon-007-analytics-2:before { content: "\f106"; }
+.flaticon-008-fluctuation:before { content: "\f107"; }
+.flaticon-009-calculator:before { content: "\f108"; }
+.flaticon-010-contract:before { content: "\f109"; }
+.flaticon-011-buy:before { content: "\f10a"; }
+.flaticon-012-auction:before { content: "\f10b"; }
+.flaticon-013-point-of-service:before { content: "\f10c"; }
+.flaticon-014-percentage:before { content: "\f10d"; }
+.flaticon-015-analytics-1:before { content: "\f10e"; }
+.flaticon-016-sell:before { content: "\f10f"; }
+.flaticon-017-target:before { content: "\f110"; }
+.flaticon-018-newspaper:before { content: "\f111"; }
+.flaticon-019-donation:before { content: "\f112"; }
+.flaticon-020-loss-1:before { content: "\f113"; }
+.flaticon-021-bank:before { content: "\f114"; }
+.flaticon-022-cheque:before { content: "\f115"; }
+.flaticon-023-safebox:before { content: "\f116"; }
+.flaticon-024-money-2:before { content: "\f117"; }
+.flaticon-025-payment-method:before { content: "\f118"; }
+.flaticon-026-id-card:before { content: "\f119"; }
+.flaticon-027-purse:before { content: "\f11a"; }
+.flaticon-028-bar-chart:before { content: "\f11b"; }
+.flaticon-029-chat:before { content: "\f11c"; }
+.flaticon-030-businessman-1:before { content: "\f11d"; }
+.flaticon-031-businessman:before { content: "\f11e"; }
+.flaticon-032-presentation:before { content: "\f11f"; }
+.flaticon-033-gold-ingot:before { content: "\f120"; }
+.flaticon-034-profits:before { content: "\f121"; }
+.flaticon-035-balance:before { content: "\f122"; }
+.flaticon-036-money-bag:before { content: "\f123"; }
+.flaticon-037-wallet:before { content: "\f124"; }
+.flaticon-038-loss:before { content: "\f125"; }
+.flaticon-039-shield:before { content: "\f126"; }
+.flaticon-040-atm:before { content: "\f127"; }
+.flaticon-041-money-1:before { content: "\f128"; }
+.flaticon-042-analytics:before { content: "\f129"; }
+.flaticon-043-briefcase:before { content: "\f12a"; }
+.flaticon-044-search:before { content: "\f12b"; }
+.flaticon-045-levels:before { content: "\f12c"; }
+.flaticon-046-pin-code:before { content: "\f12d"; }
+.flaticon-047-time-is-money:before { content: "\f12e"; }
+.flaticon-048-withdraw:before { content: "\f12f"; }
+.flaticon-049-money:before { content: "\f130"; }
+.flaticon-050-exchange:before { content: "\f131"; }
