@@ -22,12 +22,12 @@ import ListItemText from "@material-ui/core/ListItemText";
 const useStyles = makeStyles((theme) => ({
   toolbarMargin: {
     ...theme.mixins.toolbar,
-    marginBottom: "3em",
+    marginBottom: "2em",
     [theme.breakpoints.down("md")]: {
-      marginBottom: "2em",
+      marginBottom: "1em",
     },
     [theme.breakpoints.down("xs")]: {
-      marginBottom: "1.55em",
+      marginBottom: ".85em",
     },
   },
   capresLogo: {
@@ -88,7 +88,9 @@ const useStyles = makeStyles((theme) => ({
     opacity: 0.7,
   },
   drawerItemSelected: {
-    opacity: 1,
+    "& .MuiListItemText-root": {
+      opacity: 1,
+    },
   },
   drawerIcon: {
     height: "50px",
@@ -104,6 +106,9 @@ const useStyles = makeStyles((theme) => ({
   },
   drawerItemSign: {
     backgroundColor: theme.palette.common.capresOrange,
+  },
+  appbar: {
+    zIndex: theme.zIndex.modal + 1,
   },
 }));
 
@@ -125,14 +130,14 @@ export default function Header(props) {
   const theme = useTheme();
   const iOS = process.browser && /iPad|iPhone|iPod/.test(navigator.userAgent);
   const matches = useMediaQuery(theme.breakpoints.down("md"));
-  const [value, setValue] = useState(0);
+
   const [anchorEl, setAnchorEl] = useState(null);
   const [open, setOpen] = useState(false);
-  const [selectedIndex, setSelectedIndex] = useState(0);
+
   const [openDrawer, setOpenDrawer] = useState(false);
 
   const handleChange = (e, value) => {
-    setValue(value);
+    props.setValue(value);
   };
   const handleClick = (e) => {
     setAnchorEl(e.currentTarget);
@@ -142,7 +147,7 @@ export default function Header(props) {
   const handleMenuItemClick = (e, i) => {
     setAnchorEl(null);
     setOpen(false);
-    setSelectedIndex(i);
+    props.setSelectedIndex(i);
   };
 
   const handleClose = (e) => {
@@ -150,160 +155,104 @@ export default function Header(props) {
     setOpen(false);
   };
 
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   const menuOptions = [
-    { name: "Servicios", link: "/servicios" },
-    { name: "Retiros", link: "/retiros" },
-    { name: "Préstamos Personales", link: "/prestamos" },
-    { name: "Préstamos de Vivienda", link: "/vivienda" },
-    { name: "Préstamos de Vehículos", link: "/vehiculos" },
-    { name: "Fondo Especial para Programas (FEP)", link: "/fondo" },
+    { name: "Servicios", link: "/servicios", activeIndex: 2, selectedIndex: 0 },
+    { name: "Retiros", link: "/retiros", activeIndex: 2, selectedIndex: 1 },
+    {
+      name: "Préstamos Personales",
+      link: "/prestamos",
+      activeIndex: 2,
+      selectedIndex: 2,
+    },
+    {
+      name: "Préstamos de Vivienda",
+      link: "/vivienda",
+      activeIndex: 2,
+      selectedIndex: 3,
+    },
+    {
+      name: "Préstamos de Vehículos",
+      link: "/vehiculos",
+      activeIndex: 2,
+      selectedIndex: 4,
+    },
+    {
+      name: "Fondo Especial para Programas (FEP)",
+      link: "/fondo",
+      activeIndex: 2,
+      selectedIndex: 5,
+    },
+  ];
+
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  const routes = [
+    { name: "Inicio", link: "/", activeIndex: 0 },
+    { name: "Nosotros", link: "/nosotros", activeIndex: 1 },
+    {
+      name: "Servicios",
+      link: "/servicios",
+      activeIndex: 2,
+      ariaOwns: anchorEl ? "simple-menu" : undefined,
+      ariaPopup: anchorEl ? "true" : undefined,
+      mouseOver: (event) => handleClick(event),
+    },
+    { name: "Socios", link: "/socios", activeIndex: 3 },
+    { name: "Contacto", link: "/contacto", activeIndex: 4 },
   ];
 
   useEffect(() => {
-    if (window.location.pathname === "/" && value !== 0) {
-      setValue(0);
-    } else if (window.location.pathname === "/nosotros" && value !== 1) {
-      setValue(1);
-    } else if (window.location.pathname === "/servicios" && value !== 2) {
-      setValue(2);
-    } else if (window.location.pathname === "/socios" && value !== 3) {
-      setValue(3);
-    } else if (window.location.pathname === "/contacto" && value !== 4) {
-      setValue(4);
-    } else if (window.location.pathname === "/login" && value !== 5) {
-      setValue(5);
-    } else if (window.location.pathname === "/registro" && value !== 6) {
-      setValue(6);
-    }
-    switch (window.location.pathname) {
-      case "/":
-        if (value !== 0) {
-          setValue(0);
-        }
-        break;
-      case "/nosotros":
-        if (value !== 1) {
-          setValue(1);
-        }
-        break;
-      case "/servicios":
-        if (value !== 2) {
-          setValue(2);
-          setSelectedIndex(0);
-        }
-        break;
-      case "/retiros":
-        if (value !== 2) {
-          setValue(2);
-          setSelectedIndex(1);
-        }
-        break;
-      case "/prestamos":
-        if (value !== 2) {
-          setValue(2);
-          setSelectedIndex(2);
-        }
-        break;
-      case "/vivienda":
-        if (value !== 2) {
-          setValue(2);
-          setSelectedIndex(3);
-        }
-        break;
-      case "/vehiculos":
-        if (value !== 2) {
-          setValue(2);
-          setSelectedIndex(4);
-        }
-        break;
-      case "/fondo":
-        if (value !== 2) {
-          setValue(2);
-          setSelectedIndex(5);
-        }
-        break;
-      case "/socios":
-        if (value !== 3) {
-          setValue(3);
-        }
-        break;
-      case "/contacto":
-        if (value !== 4) {
-          setValue(4);
-        }
-        break;
-      case "/login":
-        if (value !== 5) {
-          setValue(5);
-        }
-        break;
-      case "/registro":
-        if (value !== 6) {
-          setValue(6);
-        }
-        break;
-      default:
-        break;
-    }
-  }, [value]);
+    [...menuOptions, ...routes].forEach((route) => {
+      switch (window.location.pathname) {
+        case `${route.link}`:
+          if (props.value !== route.activeIndex) {
+            props.setValue(route.activeIndex);
+            if (
+              route.selectedIndex &&
+              route.selectedIndex !== props.selectedIndex
+            ) {
+              props.setSelectedIndex(route.selectedIndex);
+            }
+          }
+          break;
+        default:
+          break;
+      }
+    });
+  }, [props.value, menuOptions, props.selectedIndex, routes, props]);
 
   const tabs = (
     <React.Fragment>
       <Tabs
-        value={value}
+        value={props.value}
         onChange={handleChange}
         className={classes.tabContainer}
         indicatorColor="primary"
       >
-        <Tab className={classes.tab} component={Link} to="/" label="Inicio" />
-        <Tab
-          className={classes.tab}
-          component={Link}
-          to="/nosotros"
-          label="Nosotros"
-        />
-        <Tab
-          aria-owns={anchorEl ? "simple-menu" : undefined}
-          aria-haspopup={anchorEl ? "true" : undefined}
-          className={classes.tab}
-          component={Link}
-          onMouseOver={(event) => handleClick(event)}
-          to="/servicios"
-          label="Servicios"
-        />
-        <Tab
-          className={classes.tab}
-          component={Link}
-          to="/socios"
-          label="Socios"
-        />
-        <Tab
-          className={classes.tab}
-          component={Link}
-          to="/contacto"
-          label="Contacto"
-        />
+        {routes.map((route, index) => (
+          <Tab
+            key={`${route}${index}`}
+            className={classes.tab}
+            component={Link}
+            to={route.link}
+            label={route.name}
+            aria-owns={route.ariaNowns}
+            aria-haspopup={route.ariaPopup}
+            onMouseOver={route.mouseOver}
+          />
+        ))}
       </Tabs>
       <Button
         variant="contained"
         color="secondary"
         className={classes.button}
-        onClick={() => setValue(5)}
+        onClick={() => props.setValue(5)}
         component={Link}
         to="/login"
       >
         Login
       </Button>
-      <Button
-        variant="contained"
-        color="secondary"
-        className={classes.button}
-        component={Link}
-        onClick={() => setValue(6)}
-        to="/registro"
-      >
-        Registro
-      </Button>
+
       <Menu
         id="simple-menu"
         anchorEl={anchorEl}
@@ -312,19 +261,21 @@ export default function Header(props) {
         classes={{ paper: classes.menu }}
         MenuListProps={{ onMouseLeave: handleClose }}
         elevation={0}
+        style={{ zIndex: 1302 }}
+        keepMounted
       >
         {menuOptions.map((option, i) => (
           <MenuItem
-            key={option}
+            key={`${option}${i}`}
             component={Link}
             to={option.link}
             classes={{ root: classes.menuItem }}
             onClick={(event) => {
               handleMenuItemClick(event, i);
-              setValue(2);
+              props.setValue(2);
               handleClose();
             }}
-            selected={i === selectedIndex && value === 2}
+            selected={i === props.selectedIndex && props.value === 2}
           >
             {option.name}
           </MenuItem>
@@ -343,164 +294,49 @@ export default function Header(props) {
         disableDiscovery={iOS}
         classes={{ paper: classes.drawer }}
       >
+        <div className={classes.toolbarMargin} />
         <List disablePadding>
-          <ListItem
-            divider
-            button
-            onClick={() => {
-              setOpenDrawer(false);
-              setValue(0);
-            }}
-            component={Link}
-            to="/"
-            selected={value === 0}
-          >
-            <ListItemText
-              className={
-                value === 0
-                  ? [classes.drawerItem, classes.drawerItemSelected]
-                  : classes.drawerItem
-              }
-              disableTypography
+          {routes.map((route) => (
+            <ListItem
+              divider
+              key={`${route}${route.activeIndex}`}
+              button
+              onClick={() => {
+                setOpenDrawer(false);
+                props.setValue(route.activeIndex);
+              }}
+              component={Link}
+              to={route.link}
+              selected={props.value === route.activeIndex}
+              classes={{ selected: classes.drawerItemSelected }}
             >
-              Inicio
-            </ListItemText>
-          </ListItem>
+              <ListItemText className={classes.drawerItem} disableTypography>
+                {route.name}
+              </ListItemText>
+            </ListItem>
+          ))}
+
           <ListItem
-            divider
-            button
-            onClick={() => {
-              setOpenDrawer(false);
-              setValue(1);
+            classes={{
+              root: classes.drawerItemSign,
+              selected: classes.drawerItemSelected,
             }}
-            component={Link}
-            to="/nosotros"
-            selected={value === 1}
-          >
-            <ListItemText
-              className={
-                value === 1
-                  ? [classes.drawerItem, classes.drawerItemSelected]
-                  : classes.drawerItem
-              }
-              disableTypography
-            >
-              Nosotros
-            </ListItemText>
-          </ListItem>
-          <ListItem
             divider
             button
             onClick={() => {
               setOpenDrawer(false);
-              setValue(2);
-            }}
-            component={Link}
-            to="/servicios"
-            selected={value === 2}
-          >
-            <ListItemText
-              className={
-                value === 2
-                  ? [classes.drawerItem, classes.drawerItemSelected]
-                  : classes.drawerItem
-              }
-              disableTypography
-            >
-              Servicios
-            </ListItemText>
-          </ListItem>
-          <ListItem
-            divider
-            button
-            onClick={() => {
-              setOpenDrawer(false);
-              setValue(3);
-            }}
-            component={Link}
-            to="/socios"
-            selected={value === 3}
-          >
-            <ListItemText
-              className={
-                value === 3
-                  ? [classes.drawerItem, classes.drawerItemSelected]
-                  : classes.drawerItem
-              }
-              disableTypography
-            >
-              Socios
-            </ListItemText>
-          </ListItem>
-          <ListItem
-            divider
-            button
-            onClick={() => {
-              setOpenDrawer(false);
-              setValue(4);
-            }}
-            component={Link}
-            to="/contacto"
-            selected={value === 4}
-          >
-            <ListItemText
-              className={
-                value === 4
-                  ? [classes.drawerItem, classes.drawerItemSelected]
-                  : classes.drawerItem
-              }
-              disableTypography
-            >
-              Contacto
-            </ListItemText>
-          </ListItem>
-          <ListItem
-            className={classes.drawerItemSign}
-            divider
-            button
-            onClick={() => {
-              setOpenDrawer(false);
-              setValue(5);
+              props.setValue(5);
             }}
             component={Link}
             to="/login"
-            selected={value === 5}
+            selected={props.value === 5}
           >
-            <ListItemText
-              className={
-                value === 5
-                  ? [classes.drawerItem, classes.drawerItemSelected]
-                  : classes.drawerItem
-              }
-              disableTypography
-            >
+            <ListItemText className={classes.drawerItem} disableTypography>
               Login
             </ListItemText>
           </ListItem>
-          <ListItem
-            className={classes.drawerItemSign}
-            divider
-            button
-            onClick={() => {
-              setOpenDrawer(false);
-              setValue(6);
-            }}
-            component={Link}
-            to="/registro"
-            selected={value === 6}
-          >
-            <ListItemText
-              className={
-                value === 6
-                  ? [classes.drawerItem, classes.drawerItemSelected]
-                  : classes.drawerItem
-              }
-              disableTypography
-            >
-              Registro
-            </ListItemText>
-          </ListItem>
         </List>
+        <div className={classes.toolbarMargin} />
       </SwipeableDrawer>
       <IconButton
         className={classes.drawerIconContainer}
@@ -514,13 +350,13 @@ export default function Header(props) {
   return (
     <React.Fragment>
       <ElevationScroll>
-        <AppBar position="fixed" color="primary">
+        <AppBar position="fixed" className={classes.appbar}>
           <Toolbar disableGutters>
             <Button
               component={Link}
               to="/"
               className={classes.logoContainer}
-              onClick={() => setValue(0)}
+              onClick={() => props.setValue(0)}
               disableRipple
             >
               <img

@@ -1,19 +1,29 @@
-import React from "react";
+import React, { useState } from "react";
 import { CssBaseline } from "@material-ui/core";
 import ThemeProvider from "@material-ui/styles/ThemeProvider";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import theme from "./ui/Theme";
 import Header from "./ui/Header";
+import Footer from "./ui/Footer";
+import LandingPage from "./pages/LandingPage/LandingPage";
 
 function App() {
+  const [selectedIndex, setSelectedIndex] = useState(0);
+  const [value, setValue] = useState(0);
+
   return (
     <React.Fragment>
       <CssBaseline />
       <ThemeProvider theme={theme}>
         <BrowserRouter>
-          <Header />
+          <Header
+            value={value}
+            setValue={setValue}
+            selectedIndex={selectedIndex}
+            setSelectedIndex={setSelectedIndex}
+          />
           <Switch>
-            <Route exact path="/" component={() => <div>Inicio</div>} />
+            <Route exact path="/" component={LandingPage} />
             <Route path="/nosotros" component={() => <div>Nosotros</div>} />
             <Route path="/servicios" component={() => <div>Servicios</div>} />
             <Route
@@ -43,6 +53,12 @@ function App() {
 
             <Route path="/dashboard" component={() => <div>Dashboard</div>} />
           </Switch>
+          <Footer
+            value={value}
+            setValue={setValue}
+            selectedIndex={selectedIndex}
+            setSelectedIndex={setSelectedIndex}
+          />
         </BrowserRouter>
       </ThemeProvider>
     </React.Fragment>
