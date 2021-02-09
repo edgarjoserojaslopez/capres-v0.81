@@ -1,18 +1,24 @@
 {
   "files": {
-    "main.js": "/capres-v0.81/static/js/main.dd902b1c.chunk.js",
-    "main.js.map": "/capres-v0.81/static/js/main.dd902b1c.chunk.js.map",
+    "main.js": "/capres-v0.81/static/js/main.88e83176.chunk.js",
+    "main.js.map": "/capres-v0.81/static/js/main.88e83176.chunk.js.map",
     "runtime-main.js": "/capres-v0.81/static/js/runtime-main.aad45765.js",
     "runtime-main.js.map": "/capres-v0.81/static/js/runtime-main.aad45765.js.map",
-    "static/js/2.02421166.chunk.js": "/capres-v0.81/static/js/2.02421166.chunk.js",
-    "static/js/2.02421166.chunk.js.map": "/capres-v0.81/static/js/2.02421166.chunk.js.map",
+    "static/js/2.3b48b226.chunk.js": "/capres-v0.81/static/js/2.3b48b226.chunk.js",
+    "static/js/2.3b48b226.chunk.js.map": "/capres-v0.81/static/js/2.3b48b226.chunk.js.map",
     "index.html": "/capres-v0.81/index.html",
-    "static/js/2.02421166.chunk.js.LICENSE.txt": "/capres-v0.81/static/js/2.02421166.chunk.js.LICENSE.txt",
-    "static/media/capres.jpg": "/capres-v0.81/static/media/capres.0ee1930d.jpg"
+    "static/js/2.3b48b226.chunk.js.LICENSE.txt": "/capres-v0.81/static/js/2.3b48b226.chunk.js.LICENSE.txt",
+    "static/media/capres.jpg": "/capres-v0.81/static/media/capres.0ee1930d.jpg",
+    "static/media/img6.83f88bbd.jpg": "/capres-v0.81/static/media/img6.83f88bbd.jpg",
+    "static/media/undraw_Vehicle_sale_a645.dd0af9d9.svg": "/capres-v0.81/static/media/undraw_Vehicle_sale_a645.dd0af9d9.svg",
+    "static/media/undraw_at_home_octe.c6040a3e.svg": "/capres-v0.81/static/media/undraw_at_home_octe.c6040a3e.svg",
+    "static/media/undraw_mobile_user_7oqo.c11308a5.svg": "/capres-v0.81/static/media/undraw_mobile_user_7oqo.c11308a5.svg",
+    "static/media/undraw_online_banking_7jy4.ef2f23fe.svg": "/capres-v0.81/static/media/undraw_online_banking_7jy4.ef2f23fe.svg",
+    "static/media/undraw_transfer_money_rywa.5cd13d3d.svg": "/capres-v0.81/static/media/undraw_transfer_money_rywa.5cd13d3d.svg"
   },
   "entrypoints": [
     "static/js/runtime-main.aad45765.js",
-    "static/js/2.02421166.chunk.js",
-    "static/js/main.dd902b1c.chunk.js"
+    "static/js/2.3b48b226.chunk.js",
+    "static/js/main.88e83176.chunk.js"
   ]
 }
