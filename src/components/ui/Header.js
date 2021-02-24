@@ -51,14 +51,21 @@ const useStyles = makeStyles((theme) => ({
     marginLeft: "25px",
   },
   button: {
-    ...theme.typography.login,
-    borderRadius: "50px",
+    /* ...theme.typography.login, */
+    /* ...theme.typography.learnButton, */
+    "& .MuiButton-label": {
+      color: theme.palette.common.capresBlue,
+      fontWeight: 600,
+      fontSize: "1rem",
+    },
+
     /* marginLeft: "50px", */
+    borderRadius: "0px",
     marginRight: "25px",
     /* margin: "auto", */
     fontFamily: "Montserrat",
     height: "45px",
-    width: "100px",
+    width: "10rem",
   },
   logoContainer: {
     /* margin: "auto", */
@@ -109,6 +116,7 @@ const useStyles = makeStyles((theme) => ({
   },
   appbar: {
     zIndex: theme.zIndex.modal + 1,
+    width: "100%",
   },
 }));
 
@@ -158,7 +166,12 @@ export default function Header(props) {
   // eslint-disable-next-line react-hooks/exhaustive-deps
   const menuOptions = [
     { name: "Servicios", link: "/servicios", activeIndex: 2, selectedIndex: 0 },
-    { name: "Retiros", link: "/retiros", activeIndex: 2, selectedIndex: 1 },
+    {
+      name: "Retiro de Haberes",
+      link: "/haberes",
+      activeIndex: 2,
+      selectedIndex: 1,
+    },
     {
       name: "Préstamos Personales",
       link: "/prestamos",
@@ -350,7 +363,11 @@ export default function Header(props) {
   return (
     <React.Fragment>
       <ElevationScroll>
-        <AppBar position="fixed" className={classes.appbar}>
+        <AppBar
+          style={{ overflowX: "hidden !important" }}
+          position="fixed"
+          className={classes.appbar}
+        >
           <Toolbar disableGutters>
             <Button
               component={Link}

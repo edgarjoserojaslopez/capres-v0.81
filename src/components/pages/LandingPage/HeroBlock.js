@@ -4,19 +4,14 @@ import { makeStyles } from "@material-ui/core/styles";
 import bgImage from "../../../assets/images/img6.jpg";
 
 const useStyles = makeStyles((theme) => ({
-  hero: {
-    backgroundImage: `url(${bgImage})`,
-    backgroundSize: "cover",
-    top: 0,
-    left: 0,
-    width: "100%",
+  root: {
     height: "100vh",
-    minWidth: "100%",
-    minHeight: "100%",
+    width: "100vw",
     position: "relative",
-    marginTop: "-5em",
-    padding: 0,
-    /* flexWrap: "wrap", */
+    backgroundSize: "cover",
+    backgroundPosition: "50% 50%",
+    backgroundImage: `url(${bgImage})`,
+    overflowX: "hidden",
   },
   services: {
     position: "relative",
@@ -83,7 +78,7 @@ export default function HeroBlock() {
   return (
     <Grid
       container
-      className={classes.hero}
+      className={classes.root}
       justify="center"
       alignItems="stretch"
       direction="column"
@@ -124,6 +119,8 @@ export default function HeroBlock() {
                 variant="contained"
                 color="secondary"
                 size="large"
+                href="/login"
+                target="_blank"
               >
                 Tu cuenta
               </Button>
@@ -136,6 +133,8 @@ export default function HeroBlock() {
                 variant="outlined"
                 color="secondary"
                 size="large"
+                href="/registro"
+                target="_blank"
               >
                 Registrate
               </Button>

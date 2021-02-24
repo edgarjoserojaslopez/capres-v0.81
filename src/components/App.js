@@ -6,6 +6,16 @@ import theme from "./ui/Theme";
 import Header from "./ui/Header";
 import Footer from "./ui/Footer";
 import LandingPage from "./pages/LandingPage/LandingPage";
+import NosotrosPage from "./pages/NosotrosPage/NosotrosPage";
+import SociosPage from "./pages/SociosPage/SociosPage";
+import ContactoPage from "./pages/ContactoPage/ContactoPage";
+
+import ServicesPage from "./pages/Services/ServicesPage";
+import HaberesPage from "./pages/Services/HaberesPage";
+import PrestamosPage from "./pages/Services/PrestamosPage.js";
+import ViviendaPage from "./pages/Services/ViviendaPage";
+import VehiculosPage from "./pages/Services/VehiculosPage";
+import FepPage from "./pages/Services/FepPage";
 
 function App() {
   const [selectedIndex, setSelectedIndex] = useState(0);
@@ -24,30 +34,15 @@ function App() {
           />
           <Switch>
             <Route exact path="/" component={LandingPage} />
-            <Route path="/nosotros" component={() => <div>Nosotros</div>} />
-            <Route path="/servicios" component={() => <div>Servicios</div>} />
-            <Route
-              path="/retiros"
-              component={() => <div>Retiro de Haberes</div>}
-            />
-            <Route
-              path="/prestamos"
-              component={() => <div>Préstamos Personales</div>}
-            />
-            <Route
-              path="/vivienda"
-              component={() => <div>Préstamos de Vivienda</div>}
-            />
-            <Route
-              path="/vehiculos"
-              component={() => <div>Préstamos de Vehículos</div>}
-            />
-            <Route
-              path="/fondo"
-              component={() => <div>Fondo Especial para Programas (FEP)</div>}
-            />
-            <Route path="/socios" component={() => <div>Socios</div>} />
-            <Route path="/contacto" component={() => <div>Contacto</div>} />
+            <Route path="/nosotros" component={NosotrosPage} />
+            <Route path="/servicios" component={ServicesPage} />
+            <Route path="/haberes" component={HaberesPage} />
+            <Route path="/prestamos" component={PrestamosPage} />
+            <Route path="/vivienda" component={ViviendaPage} />
+            <Route path="/vehiculos" component={VehiculosPage} />
+            <Route path="/fondo" component={FepPage} />
+            <Route path="/socios" component={SociosPage} />
+            <Route path="/contacto" component={ContactoPage} />
             <Route path="/login" component={() => <div>Login</div>} />
             <Route path="/registro" component={() => <div>Registro</div>} />
 

@@ -8,6 +8,7 @@ import homeImg from "../../../assets/svg/undraw_at_home_octe.svg";
 import vehicleImg from "../../../assets/svg/undraw_Vehicle_sale_a645.svg";
 import fepImg from "../../../assets/svg/undraw_mobile_user_7oqo.svg";
 import { makeStyles } from "@material-ui/core/styles";
+import gridBackground from "../../../assets/images/squares.png";
 
 const useStyles = makeStyles((theme) => ({
   flexCenter: {
@@ -16,12 +17,16 @@ const useStyles = makeStyles((theme) => ({
     justifyContent: "center",
     alignContent: "center",
   },
-
-  imgServices: {
-    height: "20rem",
-    width: "20rem",
+  root: {
+    background: `url(${gridBackground})`,
   },
-  learnButton: {},
+  imgServices: {
+    height: "25rem",
+    width: "25rem",
+  },
+  services: {
+    height: "15rem",
+  },
   buttonServicesRoot: {
     borderRadius: 0,
     /* left: "3em", */
@@ -55,15 +60,21 @@ const useStyles = makeStyles((theme) => ({
 export default function ServicesBlock() {
   const classes = useStyles();
   return (
-    <Grid container direction="column">
-      <Grid item className={classes.services}>
+    <Grid
+      container
+      direction="column"
+      alignItems="stretch"
+      justify="space-around"
+    >
+      <Grid item>
         {/* Servicios Block */}
         <Grid
           container
           direction="row"
           alignItems="center"
-          justify="space-around"
+          justify="space-evenly"
           spacing={10}
+          style={{ backgroundColor: "#E6E6E6" }}
         >
           <Grid item>
             <Typography variant="h4">Retiro de Haberes</Typography>
@@ -81,6 +92,8 @@ export default function ServicesBlock() {
                 label: classes.buttonServicesLabel,
               }} /* className={classes.learnButton} */
               color="secondary"
+              href="/retiros"
+              target="_blank"
             >
               <span style={{ marginRight: 10 }}>Saber más...</span>
               <ButtonArrow width={10} height={10} fill={blue[700]} />
@@ -97,13 +110,15 @@ export default function ServicesBlock() {
       </Grid>
 
       <Grid item>
-        {/* Servicios Block */}
+        {/* Servicios Block 01 */}
         <Grid
+          className={classes.root}
           container
           direction="row-reverse"
           alignItems="center"
-          justify="space-around"
+          justify="space-evenly"
           spacing={10}
+          style={{ backgroundColor: "#F6F6F6" }}
         >
           <Grid item>
             <Typography variant="h4">Préstamos Personales</Typography>
@@ -121,6 +136,8 @@ export default function ServicesBlock() {
                 label: classes.buttonServicesLabel,
               }}
               color="secondary"
+              href="/prestamos"
+              target="_blank"
             >
               <span style={{ marginRight: 10 }}>Saber más...</span>
               <ButtonArrow width={10} height={10} fill={blue[700]} />
@@ -129,7 +146,7 @@ export default function ServicesBlock() {
           <Grid item>
             <img
               className={classes.imgServices}
-              alt="retiro de haberes"
+              alt="préstamos personales"
               src={onlineBanking}
             />
           </Grid>
@@ -138,8 +155,9 @@ export default function ServicesBlock() {
           container
           direction="row"
           alignItems="center"
-          justify="space-around"
+          justify="space-evenly"
           spacing={10}
+          style={{ backgroundColor: "#E6E6E6" }}
         >
           <Grid item>
             <Typography variant="h4">Préstamos de Vivienda</Typography>
@@ -156,6 +174,8 @@ export default function ServicesBlock() {
                 label: classes.buttonServicesLabel,
               }}
               color="secondary"
+              href="/vivienda"
+              target="_blank"
             >
               <span style={{ marginRight: 10 }}>Saber más...</span>
               <ButtonArrow width={10} height={10} fill={blue[700]} />
@@ -164,19 +184,22 @@ export default function ServicesBlock() {
           <Grid item>
             <img
               className={classes.imgServices}
-              alt="retiro de haberes"
+              alt="préstamos de vivienda"
               src={homeImg}
             />
           </Grid>
         </Grid>
         <Grid
+          item
+          className={classes.root}
           container
           direction="row-reverse"
           alignItems="center"
-          justify="space-around"
+          justify="space-evenly"
           spacing={10}
+          style={{ backgroundColor: "#F6F6F6" }}
         >
-          <Grid item>
+          <Grid>
             <Typography variant="h4">
               Préstamos para Adquisicion de Vehículos
             </Typography>
@@ -194,6 +217,8 @@ export default function ServicesBlock() {
                 label: classes.buttonServicesLabel,
               }}
               color="secondary"
+              href="/vehiculos"
+              target="_blank"
             >
               <span style={{ marginRight: 10 }}>Saber más...</span>
               <ButtonArrow width={10} height={10} fill={blue[700]} />
@@ -211,8 +236,9 @@ export default function ServicesBlock() {
           container
           direction="row"
           alignItems="center"
-          justify="space-around"
+          justify="space-evenly"
           spacing={10}
+          style={{ backgroundColor: "#E6E6E6" }}
         >
           <Grid item>
             <Typography variant="h4">Fondo Especial para Programas</Typography>
@@ -230,17 +256,15 @@ export default function ServicesBlock() {
                 label: classes.buttonServicesLabel,
               }}
               color="secondary"
+              href="/fondo"
+              target="_blank"
             >
               <span style={{ marginRight: 10 }}>Saber más...</span>
               <ButtonArrow width={10} height={10} fill={blue[700]} />
             </Button>
           </Grid>
           <Grid item>
-            <img
-              className={classes.imgServices}
-              alt="retiro de haberes"
-              src={fepImg}
-            />
+            <img className={classes.imgServices} alt="fondo FEP" src={fepImg} />
           </Grid>
         </Grid>
       </Grid>
