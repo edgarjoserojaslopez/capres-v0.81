@@ -8,6 +8,9 @@ import Footer from "./ui/Footer";
 import LandingPage from "./pages/LandingPage/LandingPage";
 import NosotrosPage from "./pages/NosotrosPage/NosotrosPage";
 import HistoriaPage from "./pages/NosotrosPage/HistoriaPage";
+import EstructuraPage from "./pages/NosotrosPage/EstructuraPage";
+import JuntaPage from "./pages/NosotrosPage/JuntaPage";
+import OrganizacionPage from "./pages/NosotrosPage/HistoriaPage";
 import SociosPage from "./pages/SociosPage/SociosPage";
 import ContactoPage from "./pages/ContactoPage/ContactoPage";
 
@@ -37,6 +40,9 @@ function App() {
             <Route exact path="/" component={LandingPage} />
             <Route path="/nosotros" component={NosotrosPage} />
             <Route path="/historia" component={HistoriaPage} />
+            <Route path="/estructura" component={EstructuraPage} />
+            <Route path="/junta" component={JuntaPage} />
+            <Route path="/organizacion" component={OrganizacionPage} />
             <Route path="/servicios" component={ServicesPage} />
             <Route path="/haberes" component={HaberesPage} />
             <Route path="/prestamos" component={PrestamosPage} />
