@@ -1,48 +1,61 @@
-import React from "react";
+import React, { useState } from "react";
 import { CssBaseline } from "@material-ui/core";
 import ThemeProvider from "@material-ui/styles/ThemeProvider";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import theme from "./ui/Theme";
 import Header from "./ui/Header";
+import Footer from "./ui/Footer";
+import LandingPage from "./pages/LandingPage/LandingPage";
+import NosotrosPage from "./pages/NosotrosPage/NosotrosPage";
+import HistoriaPage from "./pages/NosotrosPage/HistoriaPage";
+import SociosPage from "./pages/SociosPage/SociosPage";
+import ContactoPage from "./pages/ContactoPage/ContactoPage";
+
+import ServicesPage from "./pages/Services/ServicesPage";
+import HaberesPage from "./pages/Services/HaberesPage";
+import PrestamosPage from "./pages/Services/PrestamosPage.js";
+import ViviendaPage from "./pages/Services/ViviendaPage";
+import VehiculosPage from "./pages/Services/VehiculosPage";
+import FepPage from "./pages/Services/FepPage";
 
 function App() {
+  const [selectedIndex, setSelectedIndex] = useState(0);
+  const [value, setValue] = useState(0);
+
   return (
     <React.Fragment>
       <CssBaseline />
       <ThemeProvider theme={theme}>
         <BrowserRouter>
-          <Header />
+          <Header
+            value={value}
+            setValue={setValue}
+            selectedIndex={selectedIndex}
+            setSelectedIndex={setSelectedIndex}
+          />
           <Switch>
-            <Route exact path="/" component={() => <div>Inicio</div>} />
-            <Route path="/nosotros" component={() => <div>Nosotros</div>} />
-            <Route path="/servicios" component={() => <div>Servicios</div>} />
-            <Route
-              path="/retiros"
-              component={() => <div>Retiro de Haberes</div>}
-            />
-            <Route
-              path="/prestamos"
-              component={() => <div>Préstamos Personales</div>}
-            />
-            <Route
-              path="/vivienda"
-              component={() => <div>Préstamos de Vivienda</div>}
-            />
-            <Route
-              path="/vehiculos"
-              component={() => <div>Préstamos de Vehículos</div>}
-            />
-            <Route
-              path="/fondo"
-              component={() => <div>Fondo Especial para Programas (FEP)</div>}
-            />
-            <Route path="/socios" component={() => <div>Socios</div>} />
-            <Route path="/contacto" component={() => <div>Contacto</div>} />
+            <Route exact path="/" component={LandingPage} />
+            <Route path="/nosotros" component={NosotrosPage} />
+            <Route path="/historia" component={HistoriaPage} />
+            <Route path="/servicios" component={ServicesPage} />
+            <Route path="/haberes" component={HaberesPage} />
+            <Route path="/prestamos" component={PrestamosPage} />
+            <Route path="/vivienda" component={ViviendaPage} />
+            <Route path="/vehiculos" component={VehiculosPage} />
+            <Route path="/fondo" component={FepPage} />
+            <Route path="/socios" component={SociosPage} />
+            <Route path="/contacto" component={ContactoPage} />
             <Route path="/login" component={() => <div>Login</div>} />
             <Route path="/registro" component={() => <div>Registro</div>} />
 
             <Route path="/dashboard" component={() => <div>Dashboard</div>} />
           </Switch>
+          <Footer
+            value={value}
+            setValue={setValue}
+            selectedIndex={selectedIndex}
+            setSelectedIndex={setSelectedIndex}
+          />
         </BrowserRouter>
       </ThemeProvider>
     </React.Fragment>
