@@ -20,7 +20,9 @@ import PrestamosPage from "./pages/Services/PrestamosPage.js";
 import ViviendaPage from "./pages/Services/ViviendaPage";
 import VehiculosPage from "./pages/Services/VehiculosPage";
 import FepPage from "./pages/Services/FepPage";
-
+import DelegadosPage from "./pages/DelegadosPage/DelegadosPage";
+import LoginPage from "./pages/LoginPage/LoginPage";
+import RegistroPage from "./pages/RegistroPage/RegistroPage";
 function App() {
   const [selectedIndex, setSelectedIndex] = useState(0);
   const [value, setValue] = useState(0);
@@ -50,9 +52,10 @@ function App() {
             <Route path="/vehiculos" component={VehiculosPage} />
             <Route path="/fondo" component={FepPage} />
             <Route path="/socios" component={SociosPage} />
+            <Route path="/delegados" component={DelegadosPage} />
             <Route path="/contacto" component={ContactoPage} />
-            <Route path="/login" component={() => <div>Login</div>} />
-            <Route path="/registro" component={() => <div>Registro</div>} />
+            <Route path="/login" component={LoginPage} />
+            <Route path="/registro" component={RegistroPage} />
 
             <Route path="/dashboard" component={() => <div>Dashboard</div>} />
           </Switch>

@@ -165,35 +165,35 @@ export default function Header(props) {
 
   // eslint-disable-next-line react-hooks/exhaustive-deps
   const menuOptions = [
-    { name: "Servicios", link: "/servicios", activeIndex: 2, selectedIndex: 0 },
+    { name: "Servicios", link: "/servicios", activeIndex: 4, selectedIndex: 0 },
     {
       name: "Retiro de Haberes",
       link: "/haberes",
-      activeIndex: 2,
+      activeIndex: 4,
       selectedIndex: 1,
     },
     {
       name: "Préstamos Personales",
       link: "/prestamos",
-      activeIndex: 2,
+      activeIndex: 4,
       selectedIndex: 2,
     },
     {
       name: "Préstamos de Vivienda",
       link: "/vivienda",
-      activeIndex: 2,
+      activeIndex: 4,
       selectedIndex: 3,
     },
     {
       name: "Préstamos de Vehículos",
       link: "/vehiculos",
-      activeIndex: 2,
+      activeIndex: 4,
       selectedIndex: 4,
     },
     {
       name: "Fondo Especial para Programas (FEP)",
       link: "/fondo",
-      activeIndex: 2,
+      activeIndex: 4,
       selectedIndex: 5,
     },
   ];
@@ -202,16 +202,18 @@ export default function Header(props) {
   const routes = [
     { name: "Inicio", link: "/", activeIndex: 0 },
     { name: "Nosotros", link: "/nosotros", activeIndex: 1 },
+    { name: "Socios", link: "/socios", activeIndex: 2 },
+    { name: "Delegados", link: "/delegados", activeIndex: 3 },
     {
       name: "Servicios",
       link: "/servicios",
-      activeIndex: 2,
+      activeIndex: 4,
       ariaOwns: anchorEl ? "simple-menu" : undefined,
       ariaPopup: anchorEl ? "true" : undefined,
       mouseOver: (event) => handleClick(event),
     },
-    { name: "Socios", link: "/socios", activeIndex: 3 },
-    { name: "Contacto", link: "/contacto", activeIndex: 4 },
+
+    { name: "Contacto", link: "/contacto", activeIndex: 5 },
   ];
 
   useEffect(() => {

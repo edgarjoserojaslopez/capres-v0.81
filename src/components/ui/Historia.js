@@ -1,7 +1,7 @@
 import { Grid, Link, makeStyles, Paper, Typography } from "@material-ui/core";
 import React from "react";
 import { MemoryRouter as Router } from "react-router-dom";
-
+import EstructuraCapres from "../../assets/uploads/Estructura_Organizativa.pdf";
 const useStyles = makeStyles((theme) => ({
   lateralStyle: {
     backgroundColor: theme.palette.common.capresBlue,
@@ -52,10 +52,11 @@ export default function Historia() {
                   <li>
                     <Grid item>
                       <Link
-                        href="/estructura"
+                        href={EstructuraCapres}
+                        download
                         style={{ textDecoration: "none" }}
                       >
-                        <Typography>Estructura Organizativa</Typography>
+                        <Typography>Estatutos CAPRES</Typography>
                       </Link>
                     </Grid>
                   </li>
