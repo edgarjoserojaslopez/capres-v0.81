@@ -92,7 +92,7 @@ export default function ServicesBlock() {
                 label: classes.buttonServicesLabel,
               }} /* className={classes.learnButton} */
               color="secondary"
-              href="/retiros"
+              href="/haberes"
               target="_blank"
             >
               <span style={{ marginRight: 10 }}>Saber más...</span>

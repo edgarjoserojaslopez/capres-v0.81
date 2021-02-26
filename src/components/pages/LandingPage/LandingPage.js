@@ -18,7 +18,7 @@ export default function LandingPage() {
   const classes = useStyles();
   return (
     <div className={classes.overflowLanding}>
-      <CssBaseline />
+      {/* <CssBaseline /> */}
       <HeroBlock />
       <ServicesBlock />
       <CardsBlock />

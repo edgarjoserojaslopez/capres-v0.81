@@ -4,6 +4,8 @@ import ThemeProvider from "@material-ui/styles/ThemeProvider";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import theme from "./ui/Theme";
 import Header from "./ui/Header";
+import Header2 from "./ui/Header2";
+
 import Footer from "./ui/Footer";
 import LandingPage from "./pages/LandingPage/LandingPage";
 import NosotrosPage from "./pages/NosotrosPage/NosotrosPage";
@@ -38,6 +40,7 @@ function App() {
             selectedIndex={selectedIndex}
             setSelectedIndex={setSelectedIndex}
           />
+          {/* <Header2 /> */}
           <Switch>
             <Route exact path="/" component={LandingPage} />
             <Route path="/nosotros" component={NosotrosPage} />
