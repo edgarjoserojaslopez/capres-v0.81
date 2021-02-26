@@ -10,7 +10,7 @@ import NosotrosPage from "./pages/NosotrosPage/NosotrosPage";
 import HistoriaPage from "./pages/NosotrosPage/HistoriaPage";
 import EstructuraPage from "./pages/NosotrosPage/EstructuraPage";
 import JuntaPage from "./pages/NosotrosPage/JuntaPage";
-import OrganizacionPage from "./pages/NosotrosPage/HistoriaPage";
+import OrganizacionPage from "./pages/NosotrosPage/OrganizacionPage";
 import SociosPage from "./pages/SociosPage/SociosPage";
 import ContactoPage from "./pages/ContactoPage/ContactoPage";
 
