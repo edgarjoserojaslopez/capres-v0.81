@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.js": "/static/js/main.782c4d78.chunk.js",
-    "main.js.map": "/static/js/main.782c4d78.chunk.js.map",
+    "main.js": "/static/js/main.3c773574.chunk.js",
+    "main.js.map": "/static/js/main.3c773574.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.1d09bc5e.js",
     "runtime-main.js.map": "/static/js/runtime-main.1d09bc5e.js.map",
-    "static/js/2.2dfd2660.chunk.js": "/static/js/2.2dfd2660.chunk.js",
-    "static/js/2.2dfd2660.chunk.js.map": "/static/js/2.2dfd2660.chunk.js.map",
+    "static/js/2.2f4cb982.chunk.js": "/static/js/2.2f4cb982.chunk.js",
+    "static/js/2.2f4cb982.chunk.js.map": "/static/js/2.2f4cb982.chunk.js.map",
     "index.html": "/index.html",
-    "static/js/2.2dfd2660.chunk.js.LICENSE.txt": "/static/js/2.2dfd2660.chunk.js.LICENSE.txt",
+    "static/js/2.2f4cb982.chunk.js.LICENSE.txt": "/static/js/2.2f4cb982.chunk.js.LICENSE.txt",
     "static/media/Estructura_Organizativa.85be1eb1.pdf": "/static/media/Estructura_Organizativa.85be1eb1.pdf",
     "static/media/capres.jpg": "/static/media/capres.0ee1930d.jpg",
     "static/media/estatutos.c6e1ec9e.pdf": "/static/media/estatutos.c6e1ec9e.pdf",
@@ -24,7 +24,7 @@
   },
   "entrypoints": [
     "static/js/runtime-main.1d09bc5e.js",
-    "static/js/2.2dfd2660.chunk.js",
-    "static/js/main.782c4d78.chunk.js"
+    "static/js/2.2f4cb982.chunk.js",
+    "static/js/main.3c773574.chunk.js"
   ]
 }
