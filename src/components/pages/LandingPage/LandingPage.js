@@ -1,7 +1,3 @@
-import React from "react";
-
-import { CssBaseline } from "@material-ui/core";
-
 import HeroBlock from "./HeroBlock";
 import ServicesBlock from "./ServicesBlock";
 import CardsBlock from "./CardsBlock";
@@ -18,7 +14,6 @@ export default function LandingPage() {
   const classes = useStyles();
   return (
     <div className={classes.overflowLanding}>
-      {/* <CssBaseline /> */}
       <HeroBlock />
       <ServicesBlock />
       <CardsBlock />

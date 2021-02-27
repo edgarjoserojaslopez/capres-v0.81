@@ -19,7 +19,7 @@ export default function RegistroPage() {
         /* paddingBottom: "20em", */
       }}
     >
-      Login
+      Registro
     </div>
   );
 }

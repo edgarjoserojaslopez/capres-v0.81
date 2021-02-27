@@ -90,7 +90,7 @@ export default function HistoriaPage() {
                     </TableHead>
                     <TableBody>
                       {rows.map((row) => (
-                        <TableRow key={row.name}>
+                        <TableRow key={row.nombre}>
                           <TableCell component="th" scope="row">
                             {row.nombre}
                           </TableCell>
@@ -119,7 +119,7 @@ export default function HistoriaPage() {
                     </TableHead>
                     <TableBody>
                       {rowsSec.map((row) => (
-                        <TableRow key={row.name}>
+                        <TableRow key={row.nombre}>
                           <TableCell component="th" scope="row">
                             {row.nombre}
                           </TableCell>

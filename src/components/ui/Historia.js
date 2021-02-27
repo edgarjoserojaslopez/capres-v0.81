@@ -1,6 +1,18 @@
-import { Grid, Link, makeStyles, Paper, Typography } from "@material-ui/core";
+import { Grid, makeStyles, Paper, Typography } from "@material-ui/core";
+import Link from "@material-ui/core/Link";
+import HistoriaPage from "../pages/NosotrosPage/HistoriaPage";
+
+/* import EstructuraPage from "../pages/NosotrosPage/EstructuraPage"; */
+import JuntaPage from "../pages/NosotrosPage/JuntaPage";
+import OrganizacionPage from "../pages/NosotrosPage/OrganizacionPage";
 import React from "react";
-import { MemoryRouter as Router } from "react-router-dom";
+import {
+  MemoryRouter as Router,
+  Link as RouterLink,
+  Switch,
+  Route,
+} from "react-router-dom";
+import LinkButton from "./LinkButton";
 import EstructuraCapres from "../../assets/uploads/Estructura_Organizativa.pdf";
 const useStyles = makeStyles((theme) => ({
   lateralStyle: {
@@ -12,6 +24,10 @@ const useStyles = makeStyles((theme) => ({
 
 export default function Historia() {
   const classes = useStyles();
+  const clickLink = (props) => {
+    window.location.href = props;
+  };
+  const preventDefault = (event) => event.preventDefault();
   return (
     <div>
       <Router>
@@ -27,7 +43,11 @@ export default function Historia() {
                 <ul>
                   <li>
                     <Grid item>
-                      <Link href="/historia" style={{ textDecoration: "none" }}>
+                      <Link
+                        href="/historia/"
+                        onClick={clickLink}
+                        style={{ textDecoration: "none" }}
+                      >
                         <Typography>Historia de CAPRES</Typography>
                       </Link>
                     </Grid>

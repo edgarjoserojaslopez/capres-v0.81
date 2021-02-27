@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Grid, Button, Typography } from "@material-ui/core";
 import ButtonArrow from "../../ui/ButtonArrow";
 import { blue } from "@material-ui/core/colors";
@@ -9,6 +9,10 @@ import vehicleImg from "../../../assets/svg/undraw_Vehicle_sale_a645.svg";
 import fepImg from "../../../assets/svg/undraw_mobile_user_7oqo.svg";
 import { makeStyles } from "@material-ui/core/styles";
 import gridBackground from "../../../assets/images/squares.png";
+
+//Aos Animations
+import Aos from "aos";
+import "aos/dist/aos.css";
 
 const useStyles = makeStyles((theme) => ({
   flexCenter: {
@@ -58,6 +62,9 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export default function ServicesBlock() {
+  useEffect(() => {
+    Aos.init({ duration: 2000 });
+  }, []);
   const classes = useStyles();
   return (
     <Grid
@@ -76,7 +83,7 @@ export default function ServicesBlock() {
           spacing={10}
           style={{ backgroundColor: "#E6E6E6" }}
         >
-          <Grid item>
+          <Grid item data-aos="fade-up">
             <Typography variant="h4">Retiro de Haberes</Typography>
             <Typography variant="subtitle1">
               Los asociados pueden solicitar retiro de haberes en dos
@@ -120,7 +127,7 @@ export default function ServicesBlock() {
           spacing={10}
           style={{ backgroundColor: "#F6F6F6" }}
         >
-          <Grid item>
+          <Grid item data-aos="fade-down">
             <Typography variant="h4">Préstamos Personales</Typography>
             <Typography variant="subtitle1">
               Los asociados pueden solicitar préstamos personales en tres
@@ -159,7 +166,7 @@ export default function ServicesBlock() {
           spacing={10}
           style={{ backgroundColor: "#E6E6E6" }}
         >
-          <Grid item>
+          <Grid item data-aos="fade-up">
             <Typography variant="h4">Préstamos de Vivienda</Typography>
             <Typography variant="subtitle1">
               Los préstamos de Vivienda son de dos tipos:
@@ -199,7 +206,7 @@ export default function ServicesBlock() {
           spacing={10}
           style={{ backgroundColor: "#F6F6F6" }}
         >
-          <Grid>
+          <Grid data-aos="fade-down">
             <Typography variant="h4">
               Préstamos para Adquisicion de Vehículos
             </Typography>
@@ -240,7 +247,7 @@ export default function ServicesBlock() {
           spacing={10}
           style={{ backgroundColor: "#E6E6E6" }}
         >
-          <Grid item>
+          <Grid item data-aos="fade-up">
             <Typography variant="h4">Fondo Especial para Programas</Typography>
             <Typography variant="subtitle1">
               El FEP se ha constituido para financiar, entre otros, lo

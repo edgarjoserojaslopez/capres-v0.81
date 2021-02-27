@@ -5,6 +5,12 @@ import Typography from "@material-ui/core/Typography";
 import sociosImg from "../../../assets/svg/undraw_people.svg";
 import makeStyles from "@material-ui/styles/makeStyles";
 import gridBackground from "../../../assets/images/squares.png";
+
+//Aos Animations
+import Aos from "aos";
+import "aos/dist/aos.css";
+import { useEffect } from "react";
+
 const useStyles = makeStyles((theme) => ({
   root: {
     background: `url(${gridBackground})`,
@@ -71,6 +77,10 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export default function CardsBlock() {
+  useEffect(() => {
+    Aos.init({ duration: 2000 });
+  }, []);
+
   const classes = useStyles();
   return (
     <>
@@ -86,6 +96,7 @@ export default function CardsBlock() {
           className={classes.cardItem}
           style={{ width: "40rem", background: "transparent", border: "none" }}
           elevation={0}
+          data-aos="flip-right"
         >
           <CardContent>
             <Grid container direction="column">

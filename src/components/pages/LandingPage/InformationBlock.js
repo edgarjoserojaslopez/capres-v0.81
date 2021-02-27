@@ -63,7 +63,7 @@ export default function InformationBlock() {
         justify="space-around"
         alignItems="center"
       >
-        <Grid item>
+        <Grid item data-aos="zoom-in">
           <Grid
             container
             direction="column"
@@ -90,7 +90,7 @@ export default function InformationBlock() {
             </Button>
           </Grid>
         </Grid>
-        <Grid item>
+        <Grid item data-aos="zoom-out">
           <Grid
             container
             direction="column"

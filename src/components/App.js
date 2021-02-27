@@ -1,10 +1,9 @@
 import React, { useState } from "react";
 import { CssBaseline } from "@material-ui/core";
 import ThemeProvider from "@material-ui/styles/ThemeProvider";
-import { BrowserRouter, Route, Switch } from "react-router-dom";
+import { BrowserRouter, Redirect, Route, Switch } from "react-router-dom";
 import theme from "./ui/Theme";
 import Header from "./ui/Header";
-import Header2 from "./ui/Header2";
 
 import Footer from "./ui/Footer";
 import LandingPage from "./pages/LandingPage/LandingPage";
@@ -26,8 +25,8 @@ import DelegadosPage from "./pages/DelegadosPage/DelegadosPage";
 import LoginPage from "./pages/LoginPage/LoginPage";
 import RegistroPage from "./pages/RegistroPage/RegistroPage";
 function App() {
-  const [selectedIndex, setSelectedIndex] = useState(0);
-  const [value, setValue] = useState(0);
+  const [selectedIndex, setSelectedIndex] = useState();
+  const [value, setValue] = useState();
 
   return (
     <React.Fragment>
@@ -40,26 +39,61 @@ function App() {
             selectedIndex={selectedIndex}
             setSelectedIndex={setSelectedIndex}
           />
-          {/* <Header2 /> */}
-          <Switch>
-            <Route exact path="/" component={LandingPage} />
-            <Route path="/nosotros" component={NosotrosPage} />
-            <Route path="/historia" component={HistoriaPage} />
-            <Route path="/estructura" component={EstructuraPage} />
-            <Route path="/junta" component={JuntaPage} />
-            <Route path="/organizacion" component={OrganizacionPage} />
-            <Route path="/servicios" component={ServicesPage} />
-            <Route path="/haberes" component={HaberesPage} />
-            <Route path="/prestamos" component={PrestamosPage} />
-            <Route path="/vivienda" component={ViviendaPage} />
-            <Route path="/vehiculos" component={VehiculosPage} />
-            <Route path="/fondo" component={FepPage} />
-            <Route path="/socios" component={SociosPage} />
-            <Route path="/delegados" component={DelegadosPage} />
-            <Route path="/contacto" component={ContactoPage} />
-            <Route path="/login" component={LoginPage} />
-            <Route path="/registro" component={RegistroPage} />
 
+          <Switch>
+            <Route exact path="/">
+              <LandingPage />
+            </Route>
+
+            <Route path="/nosotros">
+              <NosotrosPage />
+            </Route>
+
+            <Route path="/servicios">
+              <ServicesPage />
+            </Route>
+            <Route path="/haberes">
+              <HaberesPage />
+            </Route>
+            <Route path="/prestamos">
+              <PrestamosPage />
+            </Route>
+            <Route path="/vivienda">
+              <ViviendaPage />
+            </Route>
+            <Route path="/vehiculos">
+              <VehiculosPage />
+            </Route>
+            <Route path="/fondo">
+              <FepPage />
+            </Route>
+            <Route path="/socios">
+              <SociosPage />
+            </Route>
+            <Route path="/delegados">
+              <DelegadosPage />
+            </Route>
+            <Route path="/contacto">
+              <ContactoPage />
+            </Route>
+            <Route path="/login">
+              <LoginPage />
+            </Route>
+            <Route path="/registro">
+              <RegistroPage />
+            </Route>
+            <Route path="/historia">
+              <HistoriaPage />
+            </Route>
+            <Route path="/estructura">
+              <EstructuraPage />
+            </Route>
+            <Route path="/junta">
+              <JuntaPage />
+            </Route>
+            <Route path="/organizacion">
+              <OrganizacionPage />
+            </Route>
             <Route path="/dashboard" component={() => <div>Dashboard</div>} />
           </Switch>
           <Footer
