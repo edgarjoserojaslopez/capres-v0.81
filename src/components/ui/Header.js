@@ -200,7 +200,7 @@ export default function Header(props) {
 
   // eslint-disable-next-line react-hooks/exhaustive-deps
   const routes = [
-    { name: "Inicio", link: "/inicio", activeIndex: 0 },
+    { name: "Inicio", link: "/", activeIndex: 0 },
     { name: "Nosotros", link: "/nosotros", activeIndex: 1 },
     { name: "Socios", link: "/socios", activeIndex: 2 },
     { name: "Delegados", link: "/delegados", activeIndex: 3 },
@@ -257,6 +257,7 @@ export default function Header(props) {
           />
         ))}
       </Tabs>
+
       <Button
         variant="contained"
         color="secondary"
@@ -267,7 +268,6 @@ export default function Header(props) {
       >
         Login
       </Button>
-
       <Menu
         id="simple-menu"
         anchorEl={anchorEl}

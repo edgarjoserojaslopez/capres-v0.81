@@ -64,7 +64,7 @@ export default function NosotrosPage() {
     }
   }
   const classes = useStyles();
-  const preventDefault = (event) => event.preventDefault();
+
   return (
     <div
       className={classes.backGround}

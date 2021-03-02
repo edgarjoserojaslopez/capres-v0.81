@@ -1,4 +1,5 @@
-import React, { useContext, useState } from "react";
+import React from "react";
+
 import { makeStyles } from "@material-ui/styles";
 import gridBackground from "../../../assets/images/squares.png";
 import Avatar from "@material-ui/core/Avatar";
@@ -14,6 +15,7 @@ import Grid from "@material-ui/core/Grid";
 import LockOutlinedIcon from "@material-ui/icons/LockOutlined";
 import Typography from "@material-ui/core/Typography";
 import { MyContext } from "../../../contexts/MyContext";
+import { useContext, useState } from "react";
 
 const useStyles = makeStyles((theme) => ({
   backGround: {
@@ -43,7 +45,8 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function LoginPage() {
+function LoginPageMain() {
+  //Login REST API
   const { toggleNav, loginUser, isLoggedIn } = useContext(MyContext);
 
   const initialState = {
@@ -114,6 +117,7 @@ export default function LoginPage() {
         justify="center"
         alignItems="center"
         className={classes.root}
+        xs={6}
       >
         <CssBaseline />
         {/* <Grid item xs={false} sm={4} md={7} className={classes.image} /> */}
@@ -125,7 +129,11 @@ export default function LoginPage() {
             <Typography component="h1" variant="h5">
               Sign in
             </Typography>
-            <form onSubmit={submitForm} className={classes.form} noValidate>
+            <form
+              onSubmit={submitForm}
+              className={classes.form}
+              validate="true"
+            >
               <TextField
                 variant="outlined"
                 margin="normal"
@@ -149,7 +157,7 @@ export default function LoginPage() {
                 type="password"
                 id="password"
                 autoComplete="current-password"
-                value={state.userInfo.email}
+                value={state.userInfo.password}
                 onChange={onChangeValue}
               />
               {errorMsg}
@@ -174,7 +182,7 @@ export default function LoginPage() {
                   </Link>
                 </Grid>
                 <Grid item>
-                  <Link href="#" variant="body2">
+                  <Link href="#" variant="body2" onClick={toggleNav}>
                     {"Don't have an account? Sign Up"}
                   </Link>
                 </Grid>
@@ -187,3 +195,5 @@ export default function LoginPage() {
     </div>
   );
 }
+
+export default LoginPageMain;

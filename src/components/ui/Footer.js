@@ -107,262 +107,265 @@ const useStyles = makeStyles((theme) => ({
 export default function Footer(props) {
   const classes = useStyles();
   return (
-    <footer className={classes.footer}>
-      <Grid container className={classes.gridContainerRoot}>
-        <Hidden mdDown>
+    <div className="main-footer">
+      <footer className={classes.footer}>
+        <Grid container className={classes.gridContainerRoot}>
+          <Hidden mdDown>
+            <Grid
+              container
+              justify="center"
+              /* spacing={2} */
+              className={classes.mainContainer}
+            >
+              <Grid item className={classes.gridItem}>
+                <Grid container direction="column" spacing={2}>
+                  <Grid
+                    item
+                    component={Link}
+                    onClick={() => props.setValue(0)}
+                    to="/"
+                    className={classes.link}
+                  >
+                    Inicio
+                  </Grid>
+                </Grid>
+              </Grid>
+              <Grid item className={classes.gridItem}>
+                <Grid container direction="column" spacing={2}>
+                  <Grid
+                    item
+                    component={Link}
+                    onClick={() => props.setValue(1)}
+                    to="/nosotros"
+                    className={classes.link}
+                  >
+                    Nosotros
+                  </Grid>
+                  <Grid
+                    item
+                    component={Link}
+                    onClick={() => props.setValue(1)}
+                    to="/nosotros"
+                    className={classes.link}
+                  >
+                    Historia
+                  </Grid>
+                  <Grid
+                    item
+                    component={Link}
+                    onClick={() => props.setValue(1)}
+                    to="/nosotros"
+                    className={classes.link}
+                  >
+                    Junta Directiva
+                  </Grid>
+                  <Grid
+                    item
+                    component={Link}
+                    onClick={() => props.setValue(1)}
+                    to="/nosotros"
+                    className={classes.link}
+                  >
+                    Organización Administrativa
+                  </Grid>
+                  <Grid
+                    item
+                    component={Link}
+                    onClick={() => props.setValue(1)}
+                    to="/nosotros"
+                    className={classes.link}
+                  >
+                    Estructura Organizativa
+                  </Grid>
+                </Grid>
+              </Grid>
+              <Grid item className={classes.gridItem}>
+                <Grid container direction="column" spacing={2}>
+                  <Grid
+                    item
+                    component={Link}
+                    onClick={() => {
+                      props.setValue(2);
+                      props.setSelectedIndex(0);
+                    }}
+                    to="/servicios"
+                    className={classes.link}
+                  >
+                    Servicios
+                  </Grid>
+                  <Grid
+                    item
+                    component={Link}
+                    onClick={() => {
+                      props.setValue(2);
+                      props.setSelectedIndex(1);
+                    }}
+                    to="/retiro"
+                    className={classes.link}
+                  >
+                    Retiro de Haberes
+                  </Grid>
+                  <Grid
+                    item
+                    component={Link}
+                    onClick={() => {
+                      props.setValue(2);
+                      props.setSelectedIndex(2);
+                    }}
+                    to="/prestamos"
+                    className={classes.link}
+                  >
+                    Préstamos Personales
+                  </Grid>
+                  <Grid
+                    item
+                    component={Link}
+                    onClick={() => {
+                      props.setValue(2);
+                      props.setSelectedIndex(3);
+                    }}
+                    to="/vehiculos"
+                    className={classes.link}
+                  >
+                    Préstamos Vehículos
+                  </Grid>
+                  <Grid
+                    item
+                    component={Link}
+                    onClick={() => {
+                      props.setValue(2);
+                      props.setSelectedIndex(4);
+                    }}
+                    to="/viviendas"
+                    className={classes.link}
+                  >
+                    Préstamos Viviendas
+                  </Grid>
+                  <Grid
+                    item
+                    component={Link}
+                    onClick={() => {
+                      props.setValue(2);
+                      props.setSelectedIndex(5);
+                    }}
+                    to="/fondo"
+                    className={classes.link}
+                  >
+                    Fondo Especial para Programas (FEP)
+                  </Grid>
+                </Grid>
+              </Grid>
+              <Grid item className={classes.gridItem}>
+                <Grid container direction="column" spacing={2}>
+                  <Grid
+                    item
+                    component={Link}
+                    onClick={() => {
+                      props.setValue(3);
+                      props.setSelectedIndex(0);
+                    }}
+                    to="/socios"
+                    className={classes.link}
+                  >
+                    Socios
+                  </Grid>
+                  <Grid
+                    item
+                    component={Link}
+                    onClick={() => {
+                      props.setValue(3);
+                      props.setSelectedIndex(1);
+                    }}
+                    to="/socios"
+                    className={classes.link}
+                  >
+                    Requisitos
+                  </Grid>
+                  <Grid
+                    item
+                    component={Link}
+                    onClick={() => {
+                      props.setValue(3);
+                      props.setSelectedIndex(2);
+                    }}
+                    to="/socios"
+                    className={classes.link}
+                  >
+                    Afiliacion
+                  </Grid>
+                  <Grid
+                    item
+                    component={Link}
+                    onClick={() => {
+                      props.setValue(3);
+                      props.setSelectedIndex(3);
+                    }}
+                    to="/socios"
+                    className={classes.link}
+                  >
+                    Desafiliación
+                  </Grid>
+                </Grid>
+              </Grid>
+              <Grid item className={classes.gridItem}>
+                <Grid container direction="column" spacing={2}>
+                  <Grid
+                    item
+                    component={Link}
+                    onClick={() => props.setValue(4)}
+                    to="/contacto"
+                    className={classes.link}
+                  >
+                    Contacto
+                  </Grid>
+                </Grid>
+              </Grid>
+            </Grid>
+          </Hidden>
           <Grid
             container
-            justify="center"
-            /* spacing={2} */
-            className={classes.mainContainer}
-          >
-            <Grid item className={classes.gridItem}>
-              <Grid container direction="column" spacing={2}>
-                <Grid
-                  item
-                  component={Link}
-                  onClick={() => props.setValue(0)}
-                  to="/"
-                  className={classes.link}
-                >
-                  Inicio
-                </Grid>
-              </Grid>
-            </Grid>
-            <Grid item className={classes.gridItem}>
-              <Grid container direction="column" spacing={2}>
-                <Grid
-                  item
-                  component={Link}
-                  onClick={() => props.setValue(1)}
-                  to="/nosotros"
-                  className={classes.link}
-                >
-                  Nosotros
-                </Grid>
-                <Grid
-                  item
-                  component={Link}
-                  onClick={() => props.setValue(1)}
-                  to="/nosotros"
-                  className={classes.link}
-                >
-                  Historia
-                </Grid>
-                <Grid
-                  item
-                  component={Link}
-                  onClick={() => props.setValue(1)}
-                  to="/nosotros"
-                  className={classes.link}
-                >
-                  Junta Directiva
-                </Grid>
-                <Grid
-                  item
-                  component={Link}
-                  onClick={() => props.setValue(1)}
-                  to="/nosotros"
-                  className={classes.link}
-                >
-                  Organización Administrativa
-                </Grid>
-                <Grid
-                  item
-                  component={Link}
-                  onClick={() => props.setValue(1)}
-                  to="/nosotros"
-                  className={classes.link}
-                >
-                  Estructura Organizativa
-                </Grid>
-              </Grid>
-            </Grid>
-            <Grid item className={classes.gridItem}>
-              <Grid container direction="column" spacing={2}>
-                <Grid
-                  item
-                  component={Link}
-                  onClick={() => {
-                    props.setValue(2);
-                    props.setSelectedIndex(0);
-                  }}
-                  to="/servicios"
-                  className={classes.link}
-                >
-                  Servicios
-                </Grid>
-                <Grid
-                  item
-                  component={Link}
-                  onClick={() => {
-                    props.setValue(2);
-                    props.setSelectedIndex(1);
-                  }}
-                  to="/retiro"
-                  className={classes.link}
-                >
-                  Retiro de Haberes
-                </Grid>
-                <Grid
-                  item
-                  component={Link}
-                  onClick={() => {
-                    props.setValue(2);
-                    props.setSelectedIndex(2);
-                  }}
-                  to="/prestamos"
-                  className={classes.link}
-                >
-                  Préstamos Personales
-                </Grid>
-                <Grid
-                  item
-                  component={Link}
-                  onClick={() => {
-                    props.setValue(2);
-                    props.setSelectedIndex(3);
-                  }}
-                  to="/vehiculos"
-                  className={classes.link}
-                >
-                  Préstamos Vehículos
-                </Grid>
-                <Grid
-                  item
-                  component={Link}
-                  onClick={() => {
-                    props.setValue(2);
-                    props.setSelectedIndex(4);
-                  }}
-                  to="/viviendas"
-                  className={classes.link}
-                >
-                  Préstamos Viviendas
-                </Grid>
-                <Grid
-                  item
-                  component={Link}
-                  onClick={() => {
-                    props.setValue(2);
-                    props.setSelectedIndex(5);
-                  }}
-                  to="/fondo"
-                  className={classes.link}
-                >
-                  Fondo Especial para Programas (FEP)
-                </Grid>
-              </Grid>
-            </Grid>
-            <Grid item className={classes.gridItem}>
-              <Grid container direction="column" spacing={2}>
-                <Grid
-                  item
-                  component={Link}
-                  onClick={() => {
-                    props.setValue(3);
-                    props.setSelectedIndex(0);
-                  }}
-                  to="/socios"
-                  className={classes.link}
-                >
-                  Socios
-                </Grid>
-                <Grid
-                  item
-                  component={Link}
-                  onClick={() => {
-                    props.setValue(3);
-                    props.setSelectedIndex(1);
-                  }}
-                  to="/socios"
-                  className={classes.link}
-                >
-                  Requisitos
-                </Grid>
-                <Grid
-                  item
-                  component={Link}
-                  onClick={() => {
-                    props.setValue(3);
-                    props.setSelectedIndex(2);
-                  }}
-                  to="/socios"
-                  className={classes.link}
-                >
-                  Afiliacion
-                </Grid>
-                <Grid
-                  item
-                  component={Link}
-                  onClick={() => {
-                    props.setValue(3);
-                    props.setSelectedIndex(3);
-                  }}
-                  to="/socios"
-                  className={classes.link}
-                >
-                  Desafiliación
-                </Grid>
-              </Grid>
-            </Grid>
-            <Grid item className={classes.gridItem}>
-              <Grid container direction="column" spacing={2}>
-                <Grid
-                  item
-                  component={Link}
-                  onClick={() => props.setValue(4)}
-                  to="/contacto"
-                  className={classes.link}
-                >
-                  Contacto
-                </Grid>
-              </Grid>
-            </Grid>
-          </Grid>
-        </Hidden>
-        <Grid
-          container
-          /* justify="center"
+            /* justify="center"
           alignItems="center" */
-          className={classes.socialContainer}
-        >
-          <Grid
-            item
-            component={"a"}
-            href="http://www.facebook.com"
-            rel="noopener noreferrer"
-            target="_blank"
+            className={classes.socialContainer}
           >
-            <Facebook className={classes.icon} />
+            <Grid
+              item
+              component={"a"}
+              href="http://www.facebook.com"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              <Facebook className={classes.icon} />
+            </Grid>
+            <Grid
+              item
+              component={"a"}
+              href="http://www.twitter.com"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              <Twitter className={classes.icon} />
+            </Grid>
+            <Grid
+              item
+              component={"a"}
+              href="http://www.instagram.com"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              <Instagram className={classes.icon} />
+            </Grid>
           </Grid>
-          <Grid
-            item
-            component={"a"}
-            href="http://www.twitter.com"
-            rel="noopener noreferrer"
-            target="_blank"
-          >
-            <Twitter className={classes.icon} />
-          </Grid>
-          <Grid
-            item
-            component={"a"}
-            href="http://www.instagram.com"
-            rel="noopener noreferrer"
-            target="_blank"
-          >
-            <Instagram className={classes.icon} />
+          <Grid container direction="column" className={classes.copyRight}>
+            <Grid item>
+              <Typography className={classes.copyRightTypography}>
+                © CAPRES {new Date().getFullYear()}. Todos los derechos
+                reservados
+              </Typography>
+            </Grid>
           </Grid>
         </Grid>
-        <Grid container direction="column" className={classes.copyRight}>
-          <Grid item>
-            <Typography className={classes.copyRightTypography}>
-              © CAPRES {new Date().getFullYear()}. Todos los derechos reservados
-            </Typography>
-          </Grid>
-        </Grid>
-      </Grid>
-    </footer>
+      </footer>
+    </div>
   );
 }

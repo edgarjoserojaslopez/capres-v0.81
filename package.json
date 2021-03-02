@@ -1,4 +1,5 @@
 {
+  "homepage": "https://edgarjoserojaslopez.github.io/capres-v0.81/",
   "name": "capres-v0.81",
   "version": "0.1.0",
   "private": true,
@@ -10,21 +11,25 @@
     "@testing-library/react": "^11.2.3",
     "@testing-library/user-event": "^12.6.2",
     "aos": "^2.3.4",
+    "axios": "^0.21.1",
     "gh-pages": "^3.1.0",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-helmet": "^6.1.0",
     "react-router-dom": "^5.2.0",
     "react-scripts": "4.0.1",
+    "react-validation": "^3.0.7",
+    "validator": "^13.5.2",
     "web-vitals": "^0.2.4"
   },
   "scripts": {
+    "api": "json-server db.json -p 3333 --delay 1500",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
+    "eject": "react-scripts eject"
   },
   "eslintConfig": {
     "extends": [
@@ -43,5 +48,10 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "json-server": "^0.16.3"
   }
 }
