@@ -120,7 +120,6 @@ export default function HeroBlock() {
                 color="secondary"
                 size="large"
                 href="/login"
-                target="_blank"
               >
                 Tu cuenta
               </Button>
@@ -134,7 +133,6 @@ export default function HeroBlock() {
                 color="secondary"
                 size="large"
                 href="/registro"
-                target="_blank"
               >
                 Registrate
               </Button>

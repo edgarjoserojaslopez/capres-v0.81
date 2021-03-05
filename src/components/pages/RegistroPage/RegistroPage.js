@@ -1,27 +1,25 @@
-import React from "react";
+import React, { useContext, useState } from "react";
+import { MyContext } from "../../../contexts/MyContext";
 import gridBackground from "../../../assets/images/squares.png";
 import Avatar from "@material-ui/core/Avatar";
 import Button from "@material-ui/core/Button";
 import CssBaseline from "@material-ui/core/CssBaseline";
 import TextField from "@material-ui/core/TextField";
-import FormControlLabel from "@material-ui/core/FormControlLabel";
-import Checkbox from "@material-ui/core/Checkbox";
+
 import Link from "@material-ui/core/Link";
 import Grid from "@material-ui/core/Grid";
-import Box from "@material-ui/core/Box";
+
 import LockOutlinedIcon from "@material-ui/icons/LockOutlined";
 import Typography from "@material-ui/core/Typography";
 import { makeStyles } from "@material-ui/core/styles";
-import Container from "@material-ui/core/Container";
+
 import { Paper } from "@material-ui/core";
 
 const useStyles = makeStyles((theme) => ({
   backGround: {
     background: `url(${gridBackground})`,
   },
-  backGround: {
-    background: `url(${gridBackground})`,
-  },
+
   root: {
     height: "100vh",
     /* minWidth: "50vw", */
@@ -48,6 +46,58 @@ const useStyles = makeStyles((theme) => ({
 
 export default function RegistroPage() {
   const classes = useStyles();
+
+  const { registerUser } = useContext(MyContext);
+  const initialState = {
+    userInfo: {
+      name: "",
+      email: "",
+      password: "",
+    },
+    errorMsg: "",
+    successMsg: "",
+  };
+  const [state, setState] = useState(initialState);
+
+  // On Submit the Registration Form
+  const submitForm = async (event) => {
+    event.preventDefault();
+    const data = await registerUser(state.userInfo);
+    if (data.success) {
+      setState({
+        ...initialState,
+        successMsg: data.message,
+      });
+    } else {
+      setState({
+        ...state,
+        successMsg: "",
+        errorMsg: data.message,
+      });
+    }
+  };
+
+  // On change the Input Value (name, email, password)
+  const onChangeValue = (e) => {
+    setState({
+      ...state,
+      userInfo: {
+        ...state.userInfo,
+        [e.target.name]: e.target.value,
+      },
+    });
+  };
+
+  // Show Message on Success or Error
+  let successMsg = "";
+  let errorMsg = "";
+  if (state.errorMsg) {
+    errorMsg = <div className="error-msg">{state.errorMsg}</div>;
+  }
+  if (state.successMsg) {
+    successMsg = <div className="success-msg">{state.successMsg}</div>;
+  }
+
   return (
     <div
       className={classes.backGround}
@@ -64,40 +114,30 @@ export default function RegistroPage() {
         justify="center"
         alignItems="center"
         className={classes.root}
-        xs={6}
       >
         <CssBaseline />
-        <Grid item xs={12} sm={8} component={Paper} elevation={6} square>
+        <Grid item xs={12} sm={8} md={5} component={Paper} elevation={6} square>
           <div className={classes.paper}>
             <Avatar className={classes.avatar}>
               <LockOutlinedIcon />
             </Avatar>
             <Typography component="h1" variant="h5">
-              Sign up
+              Registro
             </Typography>
-            <form className={classes.form} noValidate>
+            <form onSubmit={submitForm} className={classes.form} noValidate>
               <Grid container spacing={2}>
-                <Grid item xs={12} sm={6}>
+                <Grid item xs={12}>
                   <TextField
-                    autoComplete="fname"
-                    name="firstName"
+                    autoComplete="name"
+                    name="name"
                     variant="outlined"
                     required
                     fullWidth
-                    id="firstName"
-                    label="First Name"
+                    id="name"
+                    label="Nombre Completo"
                     autoFocus
-                  />
-                </Grid>
-                <Grid item xs={12} sm={6}>
-                  <TextField
-                    variant="outlined"
-                    required
-                    fullWidth
-                    id="lastName"
-                    label="Last Name"
-                    name="lastName"
-                    autoComplete="lname"
+                    value={state.userInfo.name}
+                    onChange={onChangeValue}
                   />
                 </Grid>
                 <Grid item xs={12}>
@@ -106,9 +146,11 @@ export default function RegistroPage() {
                     required
                     fullWidth
                     id="email"
-                    label="Email Address"
+                    label="Correo Electrónico"
                     name="email"
                     autoComplete="email"
+                    value={state.userInfo.email}
+                    onChange={onChangeValue}
                   />
                 </Grid>
                 <Grid item xs={12}>
@@ -121,15 +163,11 @@ export default function RegistroPage() {
                     type="password"
                     id="password"
                     autoComplete="current-password"
+                    value={state.userInfo.password}
+                    onChange={onChangeValue}
                   />
-                </Grid>
-                <Grid item xs={12}>
-                  <FormControlLabel
-                    control={
-                      <Checkbox value="allowExtraEmails" color="primary" />
-                    }
-                    label="I want to receive inspiration, marketing promotions and updates via email."
-                  />
+                  {errorMsg}
+                  {successMsg}
                 </Grid>
               </Grid>
               <Button
@@ -139,12 +177,12 @@ export default function RegistroPage() {
                 color="primary"
                 className={classes.submit}
               >
-                Sign Up
+                Registrar
               </Button>
               <Grid container justify="flex-end">
                 <Grid item>
-                  <Link href="#" variant="body2">
-                    Already have an account? Sign in
+                  <Link href="/login" variant="body2">
+                    Ya tienes una cuenta? Ingresa aquí
                   </Link>
                 </Grid>
               </Grid>

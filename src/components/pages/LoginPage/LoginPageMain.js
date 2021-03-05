@@ -8,7 +8,7 @@ import CssBaseline from "@material-ui/core/CssBaseline";
 import TextField from "@material-ui/core/TextField";
 import FormControlLabel from "@material-ui/core/FormControlLabel";
 import Checkbox from "@material-ui/core/Checkbox";
-import Link from "@material-ui/core/Link";
+
 import Paper from "@material-ui/core/Paper";
 import Box from "@material-ui/core/Box";
 import Grid from "@material-ui/core/Grid";
@@ -46,6 +46,8 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 function LoginPageMain() {
+  //Redirecting hook
+
   //Login REST API
   const { toggleNav, loginUser, isLoggedIn } = useContext(MyContext);
 
@@ -101,6 +103,7 @@ function LoginPageMain() {
   }
 
   const classes = useStyles();
+
   return (
     <div
       className={classes.backGround}
@@ -117,7 +120,6 @@ function LoginPageMain() {
         justify="center"
         alignItems="center"
         className={classes.root}
-        xs={6}
       >
         <CssBaseline />
         {/* <Grid item xs={false} sm={4} md={7} className={classes.image} /> */}
@@ -127,13 +129,9 @@ function LoginPageMain() {
               <LockOutlinedIcon />
             </Avatar>
             <Typography component="h1" variant="h5">
-              Sign in
+              Login
             </Typography>
-            <form
-              onSubmit={submitForm}
-              className={classes.form}
-              validate="true"
-            >
+            <form onSubmit={submitForm} className={classes.form} noValidate>
               <TextField
                 variant="outlined"
                 margin="normal"
@@ -164,7 +162,7 @@ function LoginPageMain() {
               {successMsg}
               <FormControlLabel
                 control={<Checkbox value="remember" color="primary" />}
-                label="Remember me"
+                label="Recordarme"
               />
               <Button
                 type="submit"
@@ -173,18 +171,16 @@ function LoginPageMain() {
                 color="primary"
                 className={classes.submit}
               >
-                Sign In
+                Login
               </Button>
               <Grid container>
-                <Grid item xs>
-                  <Link href="#" variant="body2">
-                    Forgot password?
-                  </Link>
+                <Grid item>
+                  <Button color="primary">Olvidé mi contraseña</Button>
                 </Grid>
                 <Grid item>
-                  <Link href="#" variant="body2" onClick={toggleNav}>
-                    {"Don't have an account? Sign Up"}
-                  </Link>
+                  <Button color="primary" onClick={toggleNav}>
+                    {"No tienes una cuenta? Regístrate"}
+                  </Button>
                 </Grid>
               </Grid>
               <Box mt={5}></Box>

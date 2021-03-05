@@ -1,10 +1,15 @@
 import React, { useState } from "react";
+//Auth imports
+import { useContext } from "react";
+/* import  MyContext  from "../contexts/MyContext"; */
+
+//Site imports
 import { CssBaseline } from "@material-ui/core";
 import ThemeProvider from "@material-ui/styles/ThemeProvider";
-import { BrowserRouter, Route, Switch } from "react-router-dom";
+import { Route, Switch } from "react-router-dom";
 import theme from "./ui/Theme";
 import Header from "./ui/Header";
-import LoginWindow from "./pages/LoginPage/LoginWindow";
+/* import LoginWindow from "./pages/LoginPage/LoginWindow"; */
 
 import Footer from "./ui/Footer";
 import LandingPage from "./pages/LandingPage/LandingPage";
@@ -15,7 +20,6 @@ import JuntaPage from "./pages/NosotrosPage/JuntaPage";
 import OrganizacionPage from "./pages/NosotrosPage/OrganizacionPage";
 import SociosPage from "./pages/SociosPage/SociosPage";
 import ContactoPage from "./pages/ContactoPage/ContactoPage";
-import DashboardPage from "./pages/DashboardPage/DashboardPage";
 
 import ServicesPage from "./pages/Services/ServicesPage";
 import HaberesPage from "./pages/Services/HaberesPage";
@@ -24,9 +28,12 @@ import ViviendaPage from "./pages/Services/ViviendaPage";
 import VehiculosPage from "./pages/Services/VehiculosPage";
 import FepPage from "./pages/Services/FepPage";
 import DelegadosPage from "./pages/DelegadosPage/DelegadosPage";
+
+// Auth pages
 import LoginPageMain from "./pages/LoginPage/LoginPageMain";
 /* import Login from "./pages/LoginPage/Login"; */
 import RegistroPage from "./pages/RegistroPage/RegistroPage";
+import DashboardPage from "./pages/DashboardPage/DashboardPage";
 
 //importing the ContextProvider
 import MyContextProvider from "../contexts/MyContext";
@@ -34,6 +41,9 @@ import MyContextProvider from "../contexts/MyContext";
 function App() {
   const [selectedIndex, setSelectedIndex] = useState();
   const [value, setValue] = useState();
+  /* //Auth consts
+  const { rootState, logoutUser } = useContext(MyContext);
+  const { isAuth, theUser, showLogin } = rootState; */
 
   return (
     <React.Fragment>

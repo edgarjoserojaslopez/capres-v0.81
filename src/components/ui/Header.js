@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+
 import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
 import logo from "../../assets/images/capres.jpg";
@@ -214,6 +215,7 @@ export default function Header(props) {
     },
 
     { name: "Contacto", link: "/contacto", activeIndex: 5 },
+    /* { name: "Dashboard", link: "/dashboard", activeIndex: 6 }, */
   ];
 
   useEffect(() => {
