@@ -48,84 +48,84 @@ function App() {
   return (
     <React.Fragment>
       <CssBaseline />
-      <MyContextProvider>
-        <ThemeProvider theme={theme}>
-          <>
-            <Header
-              value={value}
-              setValue={setValue}
-              selectedIndex={selectedIndex}
-              setSelectedIndex={setSelectedIndex}
-            />
+      {/* <MyContextProvider> */}
+      <ThemeProvider theme={theme}>
+        <>
+          <Header
+            value={value}
+            setValue={setValue}
+            selectedIndex={selectedIndex}
+            setSelectedIndex={setSelectedIndex}
+          />
 
-            <Switch>
-              <Route exact path="/">
-                <LandingPage />
-              </Route>
+          <Switch>
+            <Route exact path="/">
+              <LandingPage />
+            </Route>
 
-              <Route path="/nosotros">
-                <NosotrosPage />
-              </Route>
+            <Route path="/nosotros">
+              <NosotrosPage />
+            </Route>
 
-              <Route path="/servicios">
-                <ServicesPage />
-              </Route>
-              <Route path="/haberes">
-                <HaberesPage />
-              </Route>
-              <Route path="/prestamos">
-                <PrestamosPage />
-              </Route>
-              <Route path="/vivienda">
-                <ViviendaPage />
-              </Route>
-              <Route path="/vehiculos">
-                <VehiculosPage />
-              </Route>
-              <Route path="/fondo">
-                <FepPage />
-              </Route>
-              <Route path="/socios">
-                <SociosPage />
-              </Route>
-              <Route path="/delegados">
-                <DelegadosPage />
-              </Route>
-              <Route path="/contacto">
-                <ContactoPage />
-              </Route>
-              <Route path="/login">
-                <LoginPageMain />
-                {/* <LoginWindow /> */}
-              </Route>
-              <Route path="/registro">
-                <RegistroPage />
-              </Route>
-              <Route path="/historia">
-                <HistoriaPage />
-              </Route>
-              <Route path="/estructura">
-                <EstructuraPage />
-              </Route>
-              <Route path="/junta">
-                <JuntaPage />
-              </Route>
-              <Route path="/organizacion">
-                <OrganizacionPage />
-              </Route>
-              <Route path="/dashboard">
-                <DashboardPage />
-              </Route>
-            </Switch>
-            <Footer
-              value={value}
-              setValue={setValue}
-              selectedIndex={selectedIndex}
-              setSelectedIndex={setSelectedIndex}
-            />
-          </>
-        </ThemeProvider>
-      </MyContextProvider>
+            <Route path="/servicios">
+              <ServicesPage />
+            </Route>
+            <Route path="/haberes">
+              <HaberesPage />
+            </Route>
+            <Route path="/prestamos">
+              <PrestamosPage />
+            </Route>
+            <Route path="/vivienda">
+              <ViviendaPage />
+            </Route>
+            <Route path="/vehiculos">
+              <VehiculosPage />
+            </Route>
+            <Route path="/fondo">
+              <FepPage />
+            </Route>
+            <Route path="/socios">
+              <SociosPage />
+            </Route>
+            <Route path="/delegados">
+              <DelegadosPage />
+            </Route>
+            <Route path="/contacto">
+              <ContactoPage />
+            </Route>
+            <Route path="/login">
+              <LoginPageMain />
+              {/* <LoginWindow /> */}
+            </Route>
+            <Route path="/registro">
+              <RegistroPage />
+            </Route>
+            <Route path="/historia">
+              <HistoriaPage />
+            </Route>
+            <Route path="/estructura">
+              <EstructuraPage />
+            </Route>
+            <Route path="/junta">
+              <JuntaPage />
+            </Route>
+            <Route path="/organizacion">
+              <OrganizacionPage />
+            </Route>
+            <Route path="/dashboard">
+              <DashboardPage />
+            </Route>
+          </Switch>
+          <Footer
+            value={value}
+            setValue={setValue}
+            selectedIndex={selectedIndex}
+            setSelectedIndex={setSelectedIndex}
+          />
+        </>
+      </ThemeProvider>
+      {/* </MyContextProvider> */}
     </React.Fragment>
   );
 }

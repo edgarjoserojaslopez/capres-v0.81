@@ -14,8 +14,11 @@ import Box from "@material-ui/core/Box";
 import Grid from "@material-ui/core/Grid";
 import LockOutlinedIcon from "@material-ui/icons/LockOutlined";
 import Typography from "@material-ui/core/Typography";
+
+//imports for authentication
 import { MyContext } from "../../../contexts/MyContext";
 import { useContext, useState } from "react";
+//imports for authentication ends here
 
 const useStyles = makeStyles((theme) => ({
   backGround: {
@@ -46,8 +49,6 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 function LoginPageMain() {
-  //Redirecting hook
-
   //Login REST API
   const { toggleNav, loginUser, isLoggedIn } = useContext(MyContext);
 
@@ -83,6 +84,8 @@ function LoginPageMain() {
       });
       localStorage.setItem("loginToken", data.token);
       await isLoggedIn();
+      //make a popup alert showing the "submited" text
+      alert("Submited");
     } else {
       setState({
         ...state,
@@ -164,27 +167,22 @@ function LoginPageMain() {
                 control={<Checkbox value="remember" color="primary" />}
                 label="Recordarme"
               />
-              <Button
-                type="submit"
-                fullWidth
-                variant="contained"
-                color="primary"
-                className={classes.submit}
-              >
+              <button type="submit" className={classes.submit}>
                 Login
-              </Button>
-              <Grid container>
-                <Grid item>
-                  <Button color="primary">Olvidé mi contraseña</Button>
-                </Grid>
-                <Grid item>
-                  <Button color="primary" onClick={toggleNav}>
-                    {"No tienes una cuenta? Regístrate"}
-                  </Button>
-                </Grid>
-              </Grid>
+              </button>
+
               <Box mt={5}></Box>
             </form>
+            <Grid container>
+              <Grid item>
+                <Button color="primary">Olvidé mi contraseña</Button>
+              </Grid>
+              <Grid item>
+                <button color="primary" onClick={toggleNav}>
+                  No tienes una cuenta? Regístrate
+                </button>
+              </Grid>
+            </Grid>
           </div>
         </Grid>
       </Grid>
