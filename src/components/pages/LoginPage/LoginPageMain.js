@@ -84,8 +84,6 @@ function LoginPageMain() {
       });
       localStorage.setItem("loginToken", data.token);
       await isLoggedIn();
-      //make a popup alert showing the "submited" text
-      alert("Submited");
     } else {
       setState({
         ...state,

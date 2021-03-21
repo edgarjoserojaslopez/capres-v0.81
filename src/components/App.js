@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 //Auth imports
-import { useContext } from "react";
+/* import { useContext } from "react"; */
 /* import  MyContext  from "../contexts/MyContext"; */
 
 //Site imports
@@ -30,10 +30,13 @@ import FepPage from "./pages/Services/FepPage";
 import DelegadosPage from "./pages/DelegadosPage/DelegadosPage";
 
 // Auth pages
-import LoginPageMain from "./pages/LoginPage/LoginPageMain";
-/* import Login from "./pages/LoginPage/Login"; */
-import RegistroPage from "./pages/RegistroPage/RegistroPage";
+/* import LoginPageMain from "./pages/LoginPage/LoginPageMain"; */
+import Login from "./pages/LoginPage/Login";
+/* import RegistroPage from "./pages/RegistroPage/RegistroPage"; */
 import DashboardPage from "./pages/DashboardPage/DashboardPage";
+import Register from "./pages/RegistroPage/Register";
+import ProfilePage from "./pages/ProfilePage/ProfilePage";
+/* import ProtectedRoutes from "./routes/ProtectedRoutes"; */
 
 //importing the ContextProvider
 import MyContextProvider from "../contexts/MyContext";
@@ -48,84 +51,89 @@ function App() {
   return (
     <React.Fragment>
       <CssBaseline />
-      {/* <MyContextProvider> */}
-      <ThemeProvider theme={theme}>
-        <>
-          <Header
-            value={value}
-            setValue={setValue}
-            selectedIndex={selectedIndex}
-            setSelectedIndex={setSelectedIndex}
-          />
+      <MyContextProvider>
+        <ThemeProvider theme={theme}>
+          <>
+            <Header
+              value={value}
+              setValue={setValue}
+              selectedIndex={selectedIndex}
+              setSelectedIndex={setSelectedIndex}
+            />
 
-          <Switch>
-            <Route exact path="/">
-              <LandingPage />
-            </Route>
+            <Switch>
+              <Route exact path="/">
+                <LandingPage />
+              </Route>
 
-            <Route path="/nosotros">
-              <NosotrosPage />
-            </Route>
+              <Route exact path="/nosotros">
+                <NosotrosPage />
+              </Route>
 
-            <Route path="/servicios">
-              <ServicesPage />
-            </Route>
-            <Route path="/haberes">
-              <HaberesPage />
-            </Route>
-            <Route path="/prestamos">
-              <PrestamosPage />
-            </Route>
-            <Route path="/vivienda">
-              <ViviendaPage />
-            </Route>
-            <Route path="/vehiculos">
-              <VehiculosPage />
-            </Route>
-            <Route path="/fondo">
-              <FepPage />
-            </Route>
-            <Route path="/socios">
-              <SociosPage />
-            </Route>
-            <Route path="/delegados">
-              <DelegadosPage />
-            </Route>
-            <Route path="/contacto">
-              <ContactoPage />
-            </Route>
-            <Route path="/login">
-              <LoginPageMain />
-              {/* <LoginWindow /> */}
-            </Route>
-            <Route path="/registro">
-              <RegistroPage />
-            </Route>
-            <Route path="/historia">
-              <HistoriaPage />
-            </Route>
-            <Route path="/estructura">
-              <EstructuraPage />
-            </Route>
-            <Route path="/junta">
-              <JuntaPage />
-            </Route>
-            <Route path="/organizacion">
-              <OrganizacionPage />
-            </Route>
-            <Route path="/dashboard">
-              <DashboardPage />
-            </Route>
-          </Switch>
-          <Footer
-            value={value}
-            setValue={setValue}
-            selectedIndex={selectedIndex}
-            setSelectedIndex={setSelectedIndex}
-          />
-        </>
-      </ThemeProvider>
-      {/* </MyContextProvider> */}
+              <Route exact path="/servicios">
+                <ServicesPage />
+              </Route>
+              <Route exact path="/haberes">
+                <HaberesPage />
+              </Route>
+              <Route exact path="/prestamos">
+                <PrestamosPage />
+              </Route>
+              <Route exact path="/vivienda">
+                <ViviendaPage />
+              </Route>
+              <Route exact path="/vehiculos">
+                <VehiculosPage />
+              </Route>
+              <Route exact path="/fondo">
+                <FepPage />
+              </Route>
+              <Route exact path="/socios">
+                <SociosPage />
+              </Route>
+              <Route exact path="/delegados">
+                <DelegadosPage />
+              </Route>
+              <Route exact path="/contacto">
+                <ContactoPage />
+              </Route>
+              <Route exact path="/login">
+                <Login />
+                {/* <LoginPageMain /> */}
+                {/* <LoginWindow /> */}
+              </Route>
+              <Route exact path="/registro">
+                <Register />
+                {/* <RegistroPage /> */}
+              </Route>
+              <Route exact path="/historia">
+                <HistoriaPage />
+              </Route>
+              <Route exact path="/estructura">
+                <EstructuraPage />
+              </Route>
+              <Route exact path="/junta">
+                <JuntaPage />
+              </Route>
+              <Route exact path="/organizacion">
+                <OrganizacionPage />
+              </Route>
+              <Route exact path="/auth">
+                <DashboardPage />
+              </Route>
+              <Route exact path="/profile">
+                <ProfilePage />
+              </Route>
+            </Switch>
+            <Footer
+              value={value}
+              setValue={setValue}
+              selectedIndex={selectedIndex}
+              setSelectedIndex={setSelectedIndex}
+            />
+          </>
+        </ThemeProvider>
+      </MyContextProvider>
     </React.Fragment>
   );
 }

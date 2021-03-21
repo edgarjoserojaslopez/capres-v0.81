@@ -43,13 +43,14 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function Login() {
+export default function Register() {
   //Styles
   const classes = useStyles();
   // initial state
+  const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [login, setLogin] = useState(false);
+  const [register, setRegister] = useState(false);
 
   const handleSubmit = (e) => {
     // prevent the form from refreshing the whole page
@@ -58,8 +59,9 @@ export default function Login() {
     // set configurations
     const configuration = {
       method: "post",
-      url: "http://localhost/php-login-registration-api/login",
+      url: "http://localhost/php-login-registration-api/register",
       data: {
+        name,
         email,
         password,
       },
@@ -67,15 +69,8 @@ export default function Login() {
 
     // make the API call
     axios(configuration)
-      .then(function (result) {
-        // set the cookie
-        cookies.set("TOKEN", result.data.token, {
-          path: "/",
-        });
-        // redirect user to the auth page
-        window.location.href = "/profile";
-
-        setLogin(true);
+      .then((result) => {
+        setRegister(true);
       })
       .catch((error) => {
         error = new Error();
@@ -102,9 +97,23 @@ export default function Login() {
         <CssBaseline />
         <Grid item xs={12} sm={8} md={6} component={Paper} elevation={6} square>
           <div className={classes.paper}>
-            <Typography variant="h3">Login</Typography>
+            <Typography variant="h3">Registro</Typography>
             <form onSubmit={(e) => handleSubmit(e)}>
               {/* email */}
+              <TextField
+                variant="outlined"
+                margin="normal"
+                required
+                fullWidth
+                id="name"
+                label="Name"
+                name="name"
+                autoComplete="name"
+                autoFocus
+                value={name}
+                type="name"
+                onChange={(e) => setName(e.target.value)}
+              />
               <TextField
                 variant="outlined"
                 margin="normal"
@@ -142,14 +151,14 @@ export default function Login() {
                 type="submit"
                 onClick={(e) => handleSubmit(e)}
               >
-                Login
+                Registro
               </Button>
 
               {/* display success message */}
-              {login ? (
-                <p className="text-success">You Are Logged in Successfully</p>
+              {register ? (
+                <p className="text-success">You Are Registered Successfully</p>
               ) : (
-                <p className="text-danger">You Are Not Logged in</p>
+                <p className="text-danger">You Are Not Registered</p>
               )}
             </form>
           </div>
