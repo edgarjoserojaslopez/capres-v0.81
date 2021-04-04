@@ -33,7 +33,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function Login() {
+export default function SignUp() {
   const classes = useStyles();
   const preventDefault = (event) => event.preventDefault();
   return (
@@ -54,13 +54,20 @@ export default function Login() {
             <h2>Login</h2>
           </Grid>
           <TextField
+            label="Nombre Completo"
+            placeholder="Ingresa tu nombre"
+            fullWidth
+            required
+            size="normal"
+            type="text"
+          />
+          <TextField
             label="Email"
             placeholder="Correo Electrónico"
             fullWidth
             required
             size="normal"
             type="email"
-            validate
           />
           <TextField
             label="Password"
@@ -69,7 +76,6 @@ export default function Login() {
             required
             type="password"
             size="normal"
-            validate
           />
           <FormControlLabel
             control={<Checkbox name="checkedB" color="primary" />}

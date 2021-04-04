@@ -40,7 +40,6 @@ import ProfilePage from "./pages/ProfilePage/ProfilePage";
 /* import ProtectedRoutes from "./routes/ProtectedRoutes"; */
 
 //importing the ContextProvider
-import MyContextProvider from "../contexts/MyContext";
 
 function App() {
   const [selectedIndex, setSelectedIndex] = useState();
