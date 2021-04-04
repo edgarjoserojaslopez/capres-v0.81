@@ -1,10 +1,11 @@
 import React, { useState } from "react";
+import "./App.css";
 //Auth imports
 /* import { useContext } from "react"; */
 /* import  MyContext  from "../contexts/MyContext"; */
 
 //Site imports
-import { CssBaseline } from "@material-ui/core";
+import { Box, CssBaseline } from "@material-ui/core";
 import ThemeProvider from "@material-ui/styles/ThemeProvider";
 import { Route, Switch } from "react-router-dom";
 import theme from "./ui/Theme";
@@ -51,9 +52,9 @@ function App() {
   return (
     <React.Fragment>
       <CssBaseline />
-      <MyContextProvider>
+      <>
         <ThemeProvider theme={theme}>
-          <>
+          <Box style={{ display: "flex", flexDirection: "column" }}>
             <Header
               value={value}
               setValue={setValue}
@@ -125,15 +126,16 @@ function App() {
                 <ProfilePage />
               </Route>
             </Switch>
+
             <Footer
               value={value}
               setValue={setValue}
               selectedIndex={selectedIndex}
               setSelectedIndex={setSelectedIndex}
             />
-          </>
+          </Box>
         </ThemeProvider>
-      </MyContextProvider>
+      </>
     </React.Fragment>
   );
 }

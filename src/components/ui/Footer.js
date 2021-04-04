@@ -107,7 +107,7 @@ const useStyles = makeStyles((theme) => ({
 export default function Footer(props) {
   const classes = useStyles();
   return (
-    <div className="main-footer">
+    <div>
       <footer className={classes.footer}>
         <Grid container className={classes.gridContainerRoot}>
           <Hidden mdDown>

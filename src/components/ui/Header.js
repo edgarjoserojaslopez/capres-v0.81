@@ -33,8 +33,8 @@ const useStyles = makeStyles((theme) => ({
   },
   capresLogo: {
     border: "none",
-    height: "7em",
-    padding: "2px",
+    height: "5em",
+    padding: "5px",
     marginLeft: "auto",
     [theme.breakpoints.down("md")]: {
       height: "6em",
@@ -353,7 +353,7 @@ export default function Header(props) {
             </ListItemText>
           </ListItem>
         </List>
-        <div className={classes.toolbarMargin} />
+        {/* <div className={classes.toolbarMargin} /> */}
       </SwipeableDrawer>
       <IconButton
         className={classes.drawerIconContainer}
@@ -369,7 +369,7 @@ export default function Header(props) {
       <ElevationScroll>
         <AppBar
           style={{ overflowX: "hidden !important" }}
-          position="fixed"
+          position="static"
           className={classes.appbar}
         >
           <Toolbar disableGutters>
@@ -391,7 +391,7 @@ export default function Header(props) {
           </Toolbar>
         </AppBar>
       </ElevationScroll>
-      <div className={classes.toolbarMargin} />
+      {/* <div className={classes.toolbarMargin} /> */}
     </React.Fragment>
   );
 }
