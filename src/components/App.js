@@ -9,7 +9,7 @@ import { Box, CssBaseline } from "@material-ui/core";
 import ThemeProvider from "@material-ui/styles/ThemeProvider";
 import { Route, Switch } from "react-router-dom";
 import theme from "./ui/Theme";
-import Header from "./ui/Header";
+import Header from "./ui/Header2";
 /* import LoginWindow from "./pages/LoginPage/LoginWindow"; */
 
 import Footer from "./ui/Footer";
@@ -35,7 +35,7 @@ import DelegadosPage from "./pages/DelegadosPage/DelegadosPage";
 import Login from "./pages/LoginPage/Login";
 /* import RegistroPage from "./pages/RegistroPage/RegistroPage"; */
 import DashboardPage from "./pages/DashboardPage/DashboardPage";
-import Register from "./pages/RegistroPage/Register";
+import SignUp from "./pages/RegistroPage/SignUp";
 import ProfilePage from "./pages/ProfilePage/ProfilePage";
 /* import ProtectedRoutes from "./routes/ProtectedRoutes"; */
 
@@ -103,7 +103,7 @@ function App() {
                 {/* <LoginWindow /> */}
               </Route>
               <Route exact path="/registro">
-                <Register />
+                <SignUp />
                 {/* <RegistroPage /> */}
               </Route>
               <Route exact path="/historia">

@@ -21,7 +21,7 @@ const useStyles = makeStyles((theme) => ({
   },
   paper: {
     padding: theme.spacing(4),
-    height: "60vh",
+    height: "50vh",
     width: "33vw",
     margin: "15vh auto",
   },
@@ -35,7 +35,6 @@ const useStyles = makeStyles((theme) => ({
 
 export default function Login() {
   const classes = useStyles();
-  const preventDefault = (event) => event.preventDefault();
   return (
     <div
       className={classes.backGround}
@@ -61,6 +60,8 @@ export default function Login() {
             size="normal"
             type="email"
             validate
+            variant="outlined"
+            margin="dense"
           />
           <TextField
             label="Password"
@@ -70,6 +71,8 @@ export default function Login() {
             type="password"
             size="normal"
             validate
+            variant="outlined"
+            margin="dense"
           />
           <FormControlLabel
             control={<Checkbox name="checkedB" color="primary" />}
@@ -85,16 +88,11 @@ export default function Login() {
             Login
           </Button>
           <Typography>
-            <Link href="/#" onClick={preventDefault}>
-              Olvidé mi contraseña
-            </Link>
+            <Link to="/">Olvidé mi contraseña</Link>
           </Typography>
           <Typography>
-            {" "}
-            Tienes una cuenta?
-            <Link href="/#" onClick={preventDefault}>
-              Ingresa
-            </Link>
+            No tienes una cuenta?
+            <Link to="/registro">Regístra</Link>
           </Typography>
         </Paper>
       </Box>
